@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0B3D6B">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Hoffman Soft Water | Industrial &amp; Commercial Pretreatment — Cincinnati, OH</title>
+  <meta name="description" content="A division of Hoffman Water. Industrial pretreatment, commercial water softening, RO, and deionization systems for facilities that demand best-in-class water quality. Serving Greater Cincinnati and beyond.">
+
+  <!-- Fonts: Inter (clean industrial UI) + DM Sans (friendly contrast) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       HOFFMAN SOFT WATER — V2 INDUSTRIAL REBUILD
+       Derived from the actual logo color palette:
+         Dark Navy:      #0B3D6B  (logo "HOFFMAN" text)
+         Mid Blue:       #1A6FAF  (logo drop outline)
+         Bright Cyan:    #29ABE2  (logo "H2O" + "soft water")
+         Light Sky:      #5BC4F0  (logo drop highlight)
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0B3D6B;
+      --navy-deep: #062A4D;
+      --navy-90: rgba(11, 61, 107, 0.9);
+      --blue: #1A6FAF;
+      --cyan: #29ABE2;
+      --sky: #5BC4F0;
+      --sky-pale: #E8F7FD;
+      --bg: #F7FAFB;
+      --white: #FFFFFF;
+      --text: #1A2332;
+      --text-secondary: #506176;
+      --border: #DAE3EA;
+      --success: #10B981;
+      --cta: #29ABE2;
+      --cta-hover: #1A8FC0;
+      --cta-glow: rgba(41, 171, 226, 0.25);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-alt: 'DM Sans', sans-serif;
+      --max-w: 1200px;
+      --section-py: clamp(4rem, 8vw, 7rem);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 20px rgba(11, 61, 107, 0.08);
+      --shadow-lg: 0 12px 40px rgba(11, 61, 107, 0.12);
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--cyan); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--blue); }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+
+    h1, h2, h3, h4 { font-family: var(--font); line-height: 1.15; color: var(--navy); }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; }
+    h3 { font-size: 1.15rem; font-weight: 700; }
+
+    /* ---- Animations ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+      background-size: 200% 100%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .btn:hover::after { opacity: 1; animation: shimmer 0.8s ease; }
+    .btn:hover { transform: translateY(-2px); text-decoration: none; }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: var(--white);
+      box-shadow: 0 4px 15px var(--cta-glow);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 25px var(--cta-glow);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(4px);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.5);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: var(--sky-pale);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .btn-white:hover { box-shadow: var(--shadow-lg); }
+
+    .btn-lg { padding: 1rem 2.25rem; font-size: 1.05rem; border-radius: var(--radius); }
+
+    /* ---- Section styling ---- */
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+    }
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--cyan);
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      transition: all 0.35s ease;
+      padding: 0.75rem 0;
+    }
+    .header.scrolled {
+      background: rgba(6, 42, 77, 0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+      padding: 0.5rem 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo — SVG recreation of the actual Hoffman Soft Water logo */
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-mark {
+      width: 44px;
+      height: 52px;
+      position: relative;
+    }
+    .logo-text-group {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .logo-hoffman {
+      font-family: var(--font);
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: baseline;
+    }
+    .logo-h2o {
+      font-size: 0.65em;
+      color: var(--cyan);
+      font-weight: 700;
+      margin-right: 0.05em;
+    }
+    .logo-soft {
+      font-family: var(--font);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--cyan);
+      letter-spacing: 0.04em;
+      margin-top: 0.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--cyan);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); text-decoration: none; }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--cyan), var(--blue)) !important;
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: var(--radius-sm) !important;
+      font-weight: 600 !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { box-shadow: 0 4px 15px var(--cta-glow); }
+
+    .nav-phone {
+      font-weight: 600 !important;
+      color: rgba(255,255,255,0.9) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy-deep);
+    }
+
+    /* Background image */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(6,42,77,0.92) 0%, rgba(11,61,107,0.78) 50%, rgba(26,111,175,0.65) 100%),
+        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80') center/cover no-repeat;
+      /* Fallback: industrial water/pipes image from Unsplash */
+    }
+
+    /* Animated background elements */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--cyan);
+      opacity: 0.08;
+      animation: float 6s ease-in-out infinite;
+    }
+    .particle:nth-child(1) { width: 300px; height: 300px; top: -50px; right: -50px; animation-delay: 0s; }
+    .particle:nth-child(2) { width: 200px; height: 200px; bottom: 10%; left: -30px; animation-delay: 2s; }
+    .particle:nth-child(3) { width: 120px; height: 120px; top: 30%; right: 20%; animation-delay: 4s; opacity: 0.05; }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: center;
+      padding: calc(80px + 3rem) 0 4rem;
+    }
+
+    .hero-content { animation: slideInLeft 0.9s cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+    .hero-division-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(41, 171, 226, 0.12);
+      border: 1px solid rgba(41, 171, 226, 0.2);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--sky);
+      margin-bottom: 1.75rem;
+      backdrop-filter: blur(4px);
+    }
+    .hero-division-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--cyan), var(--sky));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .hero-trust-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .hero-trust-item svg { width: 16px; height: 16px; color: var(--success); flex-shrink: 0; }
+
+    /* Hero right: stat cards stacked */
+    .hero-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      animation: slideInRight 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+    }
+
+    .hero-stat-card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all var(--transition);
+    }
+    .hero-stat-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(41, 171, 226, 0.3);
+      transform: translateX(-4px);
+    }
+    .hero-stat-card .number {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--white), var(--sky));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .hero-stat-card .label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.3rem;
+    }
+    .hero-stat-card .detail {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 0.15rem;
+    }
+
+    /* ============================================================
+       CREDIBILITY BAR
+       ============================================================ */
+    .cred-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .cred-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .cred-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .cred-item svg { width: 20px; height: 20px; color: var(--cyan); flex-shrink: 0; }
+    .cred-item strong { color: var(--navy); }
+
+    /* ============================================================
+       PROBLEM SECTION
+       ============================================================ */
+    .problem {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
+    .problem-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .problem-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+    }
+    .problem-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .problem-image:hover img { transform: scale(1.03); }
+    .problem-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(11,61,107,0.15));
+      pointer-events: none;
+    }
+
+    .problem-list { list-style: none; margin-top: 2rem; }
+    .problem-list li {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+    .problem-list li:hover {
+      padding-left: 0.5rem;
+      border-color: var(--cyan);
+    }
+    .problem-list li:last-child { border: none; }
+    .problem-icon-sm {
+      width: 36px; height: 36px;
+      background: var(--sky-pale);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .problem-icon-sm svg { width: 18px; height: 18px; color: var(--cyan); }
+    .problem-list h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+      color: var(--navy);
+    }
+    .problem-list p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       SERVICES
+       ============================================================ */
+    .services {
+      padding: var(--section-py) 0;
+      background: var(--bg);
+    }
+    .services-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+    .services-header .section-desc { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+      position: relative;
+    }
+    .service-card:hover {
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .service-img {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .service-card:hover .service-img img { transform: scale(1.05); }
+    .service-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(to top, var(--white), transparent);
+    }
+
+    .service-body {
+      padding: 1.5rem;
+    }
+    .service-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .service-body p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .service-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      background: var(--sky-pale);
+      color: var(--blue);
+    }
+
+    /* ============================================================
+       WHY HOFFMAN
+       ============================================================ */
+    .why {
+      padding: var(--section-py) 0;
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, var(--blue) 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .why::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(41,171,226,0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .why .section-tag { color: var(--sky); }
+    .why .section-tag::before { background: var(--sky); }
+    .why h2 { color: var(--white); }
+    .why .section-desc { color: rgba(255,255,255,0.6); }
+
+    .why-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .pillar {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: all var(--transition);
+      position: relative;
+    }
+    .pillar:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(41,171,226,0.3);
+      transform: translateY(-3px);
+    }
+    .pillar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 1.5rem; right: 1.5rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .pillar:hover::before { opacity: 1; }
+
+    .pillar-icon {
+      width: 44px; height: 44px;
+      background: rgba(41, 171, 226, 0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .pillar-icon svg { width: 22px; height: 22px; color: var(--sky); }
+
+    .pillar h3 { color: var(--white); font-size: 1rem; margin-bottom: 0.4rem; }
+    .pillar p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
+
+    /* ============================================================
+       PROCESS
+       ============================================================ */
+    .process {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+    .process-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    /* Connecting line */
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(12.5% + 8px);
+      right: calc(12.5% + 8px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      opacity: 0.3;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+      padding: 0 1rem;
+    }
+    .step-circle {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 15px var(--cta-glow);
+      transition: all var(--transition);
+    }
+    .process-step:hover .step-circle {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px var(--cta-glow);
+    }
+    .step-circle span {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--white);
+    }
+
+    .process-step h3 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .process-step p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       INDUSTRIES
+       ============================================================ */
+    .industries {
+      padding: var(--section-py) 0;
+      background: var(--bg);
+    }
+    .industries-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .industry-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    .industry-card:hover {
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .industry-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--sky-pale), #D4EEFF);
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .industry-icon svg { width: 26px; height: 26px; color: var(--blue); }
+
+    .industry-card h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .industry-card p { font-size: 0.82rem; color: var(--text-secondary); }
+
+    /* ============================================================
+       TESTIMONIALS
+       ============================================================ */
+    .testimonials {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+    .testimonials-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all var(--transition);
+      position: relative;
+    }
+    .testimonial:hover {
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-md);
+    }
+    .testimonial::before {
+      content: '\201C';
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 4rem;
+      font-family: Georgia, serif;
+      color: var(--sky-pale);
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: #F59E0B;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+    }
+    .testimonial blockquote {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .testimonial-avatar {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .testimonial-name { font-weight: 700; font-size: 0.88rem; }
+    .testimonial-role { font-size: 0.78rem; color: var(--text-secondary); }
+
+    /* ============================================================
+       ABOUT / FOUNDER
+       ============================================================ */
+    .about {
+      padding: var(--section-py) 0;
+      background: var(--bg);
+    }
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .about-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .about-content h2 { margin-bottom: 1.25rem; }
+    .about-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .about-stat {
+      text-align: center;
+      padding: 1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+    .about-stat .num {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+    .about-stat .lbl {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-top: 0.15rem;
+    }
+
+    /* ============================================================
+       FAQ
+       ============================================================ */
+    .faq {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+    .faq-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 1.25rem 3rem 1.25rem 0;
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      position: relative;
+      transition: color var(--transition);
+    }
+    .faq-q:hover { color: var(--cyan); }
+    .faq-q::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px; height: 24px;
+      background: var(--sky-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+    }
+    .faq-q::before {
+      content: '+';
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--cyan);
+      z-index: 1;
+      transition: transform var(--transition);
+    }
+    .faq-q[aria-expanded="true"]::before {
+      content: '−';
+    }
+    .faq-q[aria-expanded="true"]::after {
+      background: var(--cyan);
+    }
+    .faq-q[aria-expanded="true"]::before {
+      color: var(--white);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .faq-a-inner {
+      padding: 0 0 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ---- Highlighted stats inline ---- */
+    .stat-highlight {
+      font-weight: 800;
+      color: var(--navy);
+      background: linear-gradient(to bottom, transparent 55%, rgba(41, 171, 226, 0.15) 55%);
+      padding: 0 0.15em;
+    }
+    .why .stat-highlight,
+    .hero .stat-highlight,
+    .dial-section .stat-highlight {
+      color: var(--white);
+      background: linear-gradient(to bottom, transparent 55%, rgba(91, 196, 240, 0.25) 55%);
+    }
+
+    /* ============================================================
+       WATER HARDNESS DIAL
+       ============================================================ */
+    .dial-section {
+      padding: var(--section-py) 0;
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, var(--blue) 100%);
+      color: var(--white);
+      overflow: hidden;
+    }
+    .dial-section .section-tag { color: var(--sky); }
+    .dial-section .section-tag::before { background: var(--sky); }
+    .dial-section h2 { color: var(--white); }
+
+    .dial-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .dial-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dial-svg {
+      width: 320px;
+      height: auto;
+      overflow: visible;
+    }
+
+    .dial-track {
+      fill: none;
+      stroke: rgba(255,255,255,0.12);
+      stroke-width: 22;
+      stroke-linecap: round;
+    }
+
+    .dial-fill {
+      fill: none;
+      stroke-width: 22;
+      stroke-linecap: round;
+      /* Semicircle arc length = π × 120 ≈ 376.99 */
+      stroke-dasharray: 377;
+      stroke-dashoffset: 377;
+      transition: stroke-dashoffset 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.35));
+    }
+    .dial-fill.animated {
+      /* 21/30 = 70% of arc → 377 × 0.3 = 113.1 remaining offset */
+      stroke-dashoffset: 113.1;
+    }
+
+    .dial-needle {
+      transform-origin: 160px 170px;
+      /* Start pointing left (9 o'clock = -90deg from 12 o'clock vertical) */
+      transform: rotate(-90deg);
+      transition: transform 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .dial-needle.animated {
+      /* 21/30 of 180deg = 126deg. From -90 start → -90 + 126 = 36deg */
+      transform: rotate(36deg);
+    }
+
+    .dial-value {
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+    .dial-number {
+      display: block;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--cyan), var(--sky));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .dial-unit {
+      display: block;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.25rem;
+    }
+
+    .dial-labels {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+      color: var(--sky);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .dial-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .dial-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .dial-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dial-content h2 { margin-bottom: 1.25rem; }
+    .dial-content p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+      .dial-layout { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
+      .dial-content { order: -1; }
+      .dial-container { margin: 0 auto; }
+    }
+    @media (max-width: 480px) {
+      .dial-svg { width: 280px; }
+      .dial-number { font-size: 2.5rem; }
+      .dial-legend { gap: 0.5rem 1rem; }
+      .dial-legend-item { font-size: 0.72rem; }
+    }
+
+    /* ============================================================
+       CONTACT / CTA
+       ============================================================ */
+    .contact {
+      padding: var(--section-py) 0;
+      background: var(--bg);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-info .section-desc { margin-bottom: 2rem; }
+
+    .contact-details { list-style: none; margin-bottom: 2rem; }
+    .contact-details li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .contact-details svg { width: 20px; height: 20px; color: var(--cyan); flex-shrink: 0; }
+    .contact-details strong { color: var(--text); }
+
+    .trust-note {
+      background: linear-gradient(135deg, var(--sky-pale), #D4F0FF);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--navy);
+      font-weight: 500;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .trust-note svg { width: 20px; height: 20px; color: var(--cyan); flex-shrink: 0; margin-top: 0.1rem; }
+
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-family: var(--font);
+      font-size: 1rem; /* 16px prevents iOS auto-zoom */
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      color: var(--text);
+      transition: all var(--transition);
+      -webkit-appearance: none; /* Consistent iOS rendering */
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px var(--cta-glow);
+      background: var(--white);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; justify-content: center; }
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 0.75rem;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.4);
+      padding: 3.5rem 0 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      max-width: 280px;
+      margin-top: 1rem;
+      line-height: 1.55;
+    }
+    .footer-col h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.45rem; }
+    .footer-col a {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: var(--white); text-decoration: none; }
+
+    .footer-parent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 1rem;
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-parent a { color: var(--sky); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      font-size: 0.78rem;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-cards { display: none; }
+      .problem-layout { grid-template-columns: 1fr; }
+      .problem-image { max-height: 350px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .industry-grid { grid-template-columns: 1fr 1fr; }
+      .about-layout { grid-template-columns: 1fr; }
+      .about-image { max-height: 350px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: var(--navy-deep);
+        padding: 1.5rem;
+        gap: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        animation: fadeIn 0.3s ease;
+      }
+      .nav-links.open a {
+        padding: 0.75rem 0;
+        font-size: 1.05rem;
+      }
+
+      .hero { min-height: auto; }
+      .hero-inner { padding: calc(70px + 2rem) 0 3rem; }
+      .hero h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { width: 100%; justify-content: center; padding: 1rem 1.5rem; font-size: 1rem; }
+      .hero-trust-row { flex-direction: column; gap: 0.75rem; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .process-timeline { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .process-timeline::before { display: none; }
+      .industry-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr; }
+      .pillars { grid-template-columns: 1fr; }
+
+      /* Touch-friendly tap targets */
+      .faq-q { padding: 1.25rem 3rem 1.25rem 0; min-height: 48px; }
+      .btn { min-height: 48px; }
+      .contact-details li { padding: 0.85rem 0; }
+
+      /* Prevent horizontal scroll from any overflowing element */
+      .container { padding: 0 1.25rem; }
+      .section-tag { font-size: 0.72rem; }
+    }
+
+    /* Extra small screens (iPhone SE, etc.) */
+    @media (max-width: 380px) {
+      h2 { font-size: 1.5rem; }
+      .hero h1 { font-size: 1.5rem; }
+      .container { padding: 0 1rem; }
+      .btn { padding: 0.85rem 1.25rem; font-size: 0.92rem; }
+      .process-timeline { grid-template-columns: 1fr; }
+    }
+
+    /* iOS-specific: prevent auto-zoom on focus */
+    @supports (-webkit-touch-callout: none) {
+      input, select, textarea { font-size: 16px !important; }
+    }
+
+    /* Tap highlight for mobile */
+    @media (hover: none) {
+      .btn:hover { transform: none; }
+      .btn:active { transform: scale(0.98); }
+      a, button { -webkit-tap-highlight-color: rgba(41, 171, 226, 0.15); }
+    }
+
+    /* ---- Sticky Mobile CTA Bar ---- */
+    .mobile-cta-bar {
+      display: none; /* hidden by default, shown on mobile via JS */
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      z-index: 999;
+      background: var(--navy-deep);
+      border-top: 1px solid rgba(41, 171, 226, 0.2);
+      padding: 0.6rem 1rem;
+      gap: 0.6rem;
+      align-items: center;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
+    }
+    .mobile-cta-bar.visible {
+      transform: translateY(0);
+    }
+    .mobile-cta-phone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1rem;
+      background: transparent;
+      border: 1.5px solid var(--cyan);
+      border-radius: var(--radius-sm);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .mobile-cta-assess {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1rem;
+      background: var(--cyan);
+      border-radius: var(--radius-sm);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .mobile-cta-assess:hover { color: var(--white); }
+    @media (min-width: 769px) {
+      .mobile-cta-bar { display: none !important; }
+    }
+    @media (max-width: 768px) {
+      .mobile-cta-bar { display: flex; }
+      /* Add bottom padding to body so content isn't hidden behind sticky bar */
+      body { padding-bottom: 65px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">
+          <!-- SVG Drop Mark matching the Hoffman Soft Water logo -->
+          <div class="logo-mark">
+            <svg viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 2C22 2 40 20 40 32C40 42 32 50 22 50C12 50 4 42 4 32C4 20 22 2 22 2Z" stroke="#29ABE2" stroke-width="2.5" fill="none"/>
+              <path d="M10 38C10 38 6 28 22 14" stroke="#5BC4F0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="logo-text-group">
+            <div class="logo-hoffman"><span class="logo-h2o">H<sub>2</sub>O</span>FFMAN</div>
+            <div class="logo-soft">soft water</div>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why-hoffman">Why Hoffman</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="tel:+19375088739" class="nav-phone">&#9742; (937) 508-8739</a></li>
+          <li><a href="#contact" class="nav-cta">Request Assessment</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <div class="hero-division-badge">
+              <span class="dot"></span>
+              A Division of Hoffman Water &mdash; Industrial Water Treatment Since 1998
+            </div>
+
+            <h1>Industrial-Grade<br>Pretreatment.<br><span class="accent">Best in Class.</span></h1>
+
+            <p class="hero-sub">Commercial water softening, reverse osmosis, deionization, and filtration systems — engineered by the same team Cincinnati's industrial facilities already trust for boilers, cooling towers, and wastewater.</p>
+
+            <div class="hero-btns">
+              <a href="#contact" class="btn btn-primary btn-lg">Request a Site Assessment</a>
+              <a href="tel:+19375088739" class="btn btn-secondary btn-lg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (937) 508-8739
+              </a>
+            </div>
+
+            <div class="hero-trust-row">
+              <div class="hero-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                Chemical Engineer-Led
+              </div>
+              <div class="hero-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                UC Cincinnati Engineering
+              </div>
+              <div class="hero-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                25+ Years Industry Experience
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-cards">
+            <div class="hero-stat-card">
+              <div class="number">Since 1998</div>
+              <div class="label">Water treatment &amp; specialty chemicals</div>
+              <div class="detail">Boilers &bull; Towers &bull; Loops &bull; Wastewater</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="number">115+ mg/L</div>
+              <div class="label">Cincinnati water hardness</div>
+              <div class="detail">Second-highest national category</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="number">$15K–$50K+</div>
+              <div class="label">Pretreatment system range</div>
+              <div class="detail">Custom-engineered per facility</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CREDIBILITY BAR
+         ============================================================ -->
+    <div class="cred-bar reveal">
+      <div class="container">
+        <div class="cred-inner">
+          <div class="cred-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span><strong>B.S. Chemical Engineering</strong> — University of Cincinnati</span>
+          </div>
+          <div class="cred-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span><strong>Industrial &amp; Commercial</strong> clients across Ohio</span>
+          </div>
+          <div class="cred-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span><strong>Same Mission</strong> &mdash; different animal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PROBLEM SECTION
+         ============================================================ -->
+    <section class="problem" id="problem">
+      <div class="container">
+        <div class="problem-layout">
+          <div class="problem-image reveal">
+            <!-- Industrial water treatment imagery -->
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&q=80" alt="Industrial water treatment pipes and valves in a commercial facility" loading="lazy">
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <div class="section-tag">The Problem</div>
+            <h2>Untreated Water Destroys Industrial Equipment</h2>
+            <p class="section-desc" style="margin-bottom:0.5rem;">Cincinnati's water hardness (<span class="stat-highlight">115–135 mg/L</span>) is in the <span class="stat-highlight">second-highest national category</span>. Without proper pretreatment, every system in your facility is compromised.</p>
+
+            <ul class="problem-list">
+              <li>
+                <div class="problem-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                <div>
+                  <h4>Boiler &amp; Cooling Tower Scale</h4>
+                  <p>Mineral buildup reduces heat transfer efficiency, increases fuel consumption, and <span class="stat-highlight">accelerates tube failure</span> in critical systems.</p>
+                </div>
+              </li>
+              <li>
+                <div class="problem-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <div>
+                  <h4>Unplanned Downtime &amp; Repair Costs</h4>
+                  <p>Scaled heating elements, fouled membranes, and corroded piping lead to <span class="stat-highlight">emergency shutdowns</span> and <span class="stat-highlight">six-figure repair bills</span>.</p>
+                </div>
+              </li>
+              <li>
+                <div class="problem-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+                <div>
+                  <h4>Process &amp; Product Quality Failures</h4>
+                  <p>Hard water compromises <span class="stat-highlight">manufacturing consistency</span>, <span class="stat-highlight">pharmaceutical purity</span>, and food processing compliance.</p>
+                </div>
+              </li>
+              <li>
+                <div class="problem-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg></div>
+                <div>
+                  <h4>Energy Waste &amp; Regulatory Risk</h4>
+                  <p>Scaled systems consume up to <span class="stat-highlight">29% more energy</span>. Wastewater discharge non-compliance carries fines and operational risk.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WATER HARDNESS DIAL — Cincinnati Water Quality
+         ============================================================ -->
+    <section class="dial-section" id="water-quality">
+      <div class="container">
+        <div class="dial-layout reveal">
+          <div class="dial-content">
+            <div class="section-tag">Cincinnati Water Quality</div>
+            <h2>Your Water Is Working Against You</h2>
+            <p>Cincinnati's municipal water averages <span class="stat-highlight">18–25 grains per gallon</span> of hardness — well into the <strong>"Very Hard"</strong> classification. That means every pipe, boiler, cooling tower, and piece of equipment in your facility is under constant mineral assault.</p>
+            <p style="margin-top: 1rem;">At these levels, scale accumulates at roughly <span class="stat-highlight">1/16" per year</span> on heat exchange surfaces — enough to increase energy consumption by up to <span class="stat-highlight">29%</span> and cut equipment lifespan in half.</p>
+            <div class="dial-legend">
+              <div class="dial-legend-item">
+                <span class="dial-legend-dot" style="background: var(--success);"></span>
+                <span>Soft (0–3 gpg)</span>
+              </div>
+              <div class="dial-legend-item">
+                <span class="dial-legend-dot" style="background: #FBBF24;"></span>
+                <span>Moderate (3–7 gpg)</span>
+              </div>
+              <div class="dial-legend-item">
+                <span class="dial-legend-dot" style="background: #F97316;"></span>
+                <span>Hard (7–10 gpg)</span>
+              </div>
+              <div class="dial-legend-item">
+                <span class="dial-legend-dot" style="background: #EF4444;"></span>
+                <span>Very Hard (10+ gpg)</span>
+              </div>
+            </div>
+          </div>
+          <div class="dial-container">
+            <svg class="dial-svg" viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="dialGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#10B981" />
+                  <stop offset="25%" stop-color="#FBBF24" />
+                  <stop offset="50%" stop-color="#F97316" />
+                  <stop offset="100%" stop-color="#EF4444" />
+                </linearGradient>
+              </defs>
+              <!-- Background track arc: center (160,170), radius 120, semicircle -->
+              <path class="dial-track" d="M 40 170 A 120 120 0 0 1 280 170" />
+              <!-- Animated fill arc (same path) -->
+              <path class="dial-fill" stroke="url(#dialGradient)" d="M 40 170 A 120 120 0 0 1 280 170" />
+              <!-- Tick marks at 0, 7, 15, 22, 30 gpg positions on the arc -->
+              <!-- 0 gpg = 180° (left) -->
+              <line x1="27" y1="170" x2="40" y2="170" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <!-- 7 gpg = 138° → cos(138°)=-0.743, sin(138°)=0.669 → point at radius 130 & 120 -->
+              <line x1="64" y1="90" x2="71" y2="99" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <!-- 15 gpg = 90° (top center) -->
+              <line x1="160" y1="37" x2="160" y2="50" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <!-- 22 gpg = 48° -->
+              <line x1="249" y1="99" x2="256" y2="90" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <!-- 30 gpg = 0° (right) -->
+              <line x1="280" y1="170" x2="293" y2="170" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <!-- Tick labels -->
+              <text x="22" y="175" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="11" font-family="Inter, sans-serif">0</text>
+              <text x="55" y="82" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="11" font-family="Inter, sans-serif">7</text>
+              <text x="160" y="30" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="11" font-family="Inter, sans-serif">15</text>
+              <text x="265" y="82" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="11" font-family="Inter, sans-serif">22</text>
+              <text x="298" y="175" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="11" font-family="Inter, sans-serif">30+</text>
+              <!-- Needle: white with glow for visibility on dark bg -->
+              <g class="dial-needle">
+                <line x1="160" y1="170" x2="160" y2="68" stroke="rgba(255,255,255,0.15)" stroke-width="6" stroke-linecap="round"/>
+                <line x1="160" y1="170" x2="160" y2="68" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="160" cy="170" r="10" fill="rgba(255,255,255,0.1)" stroke="#FFFFFF" stroke-width="2"/>
+                <circle cx="160" cy="170" r="4" fill="#FFFFFF"/>
+              </g>
+              <!-- GPG unit label -->
+              <text x="160" y="198" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="11" font-family="Inter, sans-serif" letter-spacing="0.05em">Grains Per Gallon (gpg)</text>
+            </svg>
+            <div class="dial-value">
+              <span class="dial-number">0</span>
+              <span class="dial-unit">gpg avg.</span>
+            </div>
+            <div class="dial-labels">
+              <span>Cincinnati Average</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+         ============================================================ -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="services-header reveal">
+          <div class="section-tag">Pretreatment Services</div>
+          <h2>Engineered Water Treatment Solutions</h2>
+          <p class="section-desc">The same precision and attention to detail that made Hoffman Water the trusted name in industrial treatment — now focused entirely on pretreatment.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=600&q=80" alt="Commercial water softener system installation" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3>Commercial &amp; Industrial Softening</h3>
+              <p>High-capacity water softener systems engineered for facilities with demanding flow rates. Custom-sized to your hardness levels, peak demand, and equipment protection requirements.</p>
+              <div class="service-tags">
+                <span class="service-tag">Ion Exchange</span>
+                <span class="service-tag">Twin Alternating</span>
+                <span class="service-tag">Demand-Initiated</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80" alt="Reverse osmosis membrane system in industrial setting" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3>Reverse Osmosis &amp; Deionization</h3>
+              <p>Membrane-based and resin-based purification for applications requiring ultra-pure water — pharmaceutical, laboratory, electronics manufacturing, and food processing.</p>
+              <div class="service-tags">
+                <span class="service-tag">RO Systems</span>
+                <span class="service-tag">DI Polishing</span>
+                <span class="service-tag">EDI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-3">
+            <div class="service-img">
+              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Industrial filtration and water treatment monitoring" loading="lazy">
+            </div>
+            <div class="service-body">
+              <h3>Filtration &amp; Specialty Treatment</h3>
+              <p>Multimedia filtration, activated carbon, and application-specific treatment designed for your facility's unique water chemistry. Paired with ongoing monitoring and chemical programs.</p>
+              <div class="service-tags">
+                <span class="service-tag">Multimedia</span>
+                <span class="service-tag">Carbon</span>
+                <span class="service-tag">Chemical Programs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY HOFFMAN
+         ============================================================ -->
+    <section class="why" id="why-hoffman">
+      <div class="container">
+        <div class="why-header reveal">
+          <div class="section-tag">Why Hoffman Soft Water</div>
+          <h2>Same Mission. Different Animal.</h2>
+          <p class="section-desc">Born from Hoffman Water's <span class="stat-highlight">25+ years</span> treating boilers, towers, and wastewater for Ohio's toughest industrial clients. Pretreatment demands the same rigor — we built a dedicated division to deliver it.</p>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar reveal reveal-delay-1">
+            <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Chemical Engineer-Led</h3>
+            <p>Founded by a UC Chemical Engineering grad who's been solving water chemistry problems for industrial clients <span class="stat-highlight">since 1998</span>. Not a sales team — an engineering team.</p>
+          </div>
+
+          <div class="pillar reveal reveal-delay-2">
+            <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <h3>Industrial DNA</h3>
+            <p>Our core business is world-class industrial water treatment — boilers, cooling towers, closed loops, wastewater. Pretreatment is the natural extension of what we already do best.</p>
+          </div>
+
+          <div class="pillar reveal reveal-delay-3">
+            <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <h3>Application Expertise</h3>
+            <p>Corrosion programs, biocides, coagulants, membrane care — we don't just install equipment. We understand the water chemistry that makes it perform.</p>
+          </div>
+
+          <div class="pillar reveal reveal-delay-4">
+            <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <h3>Transparent &amp; Technical</h3>
+            <p>We spec what your facility needs — not what generates the highest commission. Detailed proposals with engineering rationale, not sales pitches.</p>
+          </div>
+
+          <div class="pillar reveal reveal-delay-4">
+            <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h3>Ohio &amp; Beyond</h3>
+            <p>Headquartered in Urbana, serving Greater Cincinnati and industrial facilities across Ohio. Our reputation travels because the results do.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROCESS
+         ============================================================ -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="process-header reveal">
+          <div class="section-tag">How We Work</div>
+          <h2>From Assessment to Ongoing Performance</h2>
+          <p class="section-desc">A systematic approach — the same methodology we apply to every industrial water treatment engagement.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step reveal reveal-delay-1">
+            <div class="step-circle"><span>1</span></div>
+            <h3>Site Assessment</h3>
+            <p>On-site water analysis, flow measurement, and equipment survey by our engineering team.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <div class="step-circle"><span>2</span></div>
+            <h3>System Engineering</h3>
+            <p>Custom system design based on your facility's chemistry, demand profile, and application requirements.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <div class="step-circle"><span>3</span></div>
+            <h3>Installation</h3>
+            <p>Professional install with commissioning, calibration, and operator training. Minimal disruption to operations.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-4">
+            <div class="step-circle"><span>4</span></div>
+            <h3>Monitoring &amp; Service</h3>
+            <p>Ongoing performance monitoring, preventive maintenance, chemical programs, and responsive support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INDUSTRIES
+         ============================================================ -->
+    <section class="industries" id="industries">
+      <div class="container">
+        <div class="industries-header reveal">
+          <div class="section-tag">Industries We Serve</div>
+          <h2>Pretreatment for Every Application</h2>
+          <p class="section-desc">Anywhere water quality impacts operations, product integrity, or equipment longevity.</p>
+        </div>
+
+        <div class="industry-grid">
+          <div class="industry-card reveal reveal-delay-1">
+            <div class="industry-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+            </div>
+            <h3>Manufacturing</h3>
+            <p>Protect production lines, boiler feed, and process water quality.</p>
+          </div>
+
+          <div class="industry-card reveal reveal-delay-2">
+            <div class="industry-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0H5m14 0h2m-16 0H3"/><path d="M9 7h1m4 0h1m-6 4h1m4 0h1m-6 4h1m4 0h1"/></svg>
+            </div>
+            <h3>Commercial Real Estate</h3>
+            <p>High-rise boilers, cooling systems, and domestic water protection.</p>
+          </div>
+
+          <div class="industry-card reveal reveal-delay-3">
+            <div class="industry-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3"/></svg>
+            </div>
+            <h3>Food &amp; Beverage</h3>
+            <p>Water purity for processing, sanitation, and regulatory compliance.</p>
+          </div>
+
+          <div class="industry-card reveal reveal-delay-4">
+            <div class="industry-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+            </div>
+            <h3>Pharmaceutical</h3>
+            <p>USP-grade purification, DI polishing, and validated system design.</p>
+          </div>
+
+          <div class="industry-card reveal reveal-delay-1">
+            <div class="industry-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3>Hospitality</h3>
+            <p>Hotels, resorts, and conference centers — protect laundry, kitchen, and HVAC.</p>
+          </div>
+
+          <div class="industry-card reveal reveal-delay-2">
+            <div class="industry-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Healthcare</h3>
+            <p>Sterilization, lab water, and critical equipment protection.</p>
+          </div>
+
+          <div class="industry-card reveal reveal-delay-3">
+            <div class="industry-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3>Data Centers</h3>
+            <p>Precision cooling water treatment for mission-critical infrastructure.</p>
+          </div>
+
+          <div class="industry-card reveal reveal-delay-4">
+            <div class="industry-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3>Industrial Plants</h3>
+            <p>Process water, boiler feed pretreatment, and closed-loop protection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS
+         ============================================================ -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="testimonials-header reveal">
+          <div class="section-tag">Client Feedback</div>
+          <h2>What Our Partners Say</h2>
+          <p class="section-desc">Placeholder testimonials — replace with real client feedback.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial reveal reveal-delay-1">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"We were running Hoffman's boiler treatment program for three years before they launched the pretreatment division. Switching our softening systems to them was a no-brainer — they already knew our water chemistry inside and out."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">RT</div>
+              <div>
+                <div class="testimonial-name">R. Thompson</div>
+                <div class="testimonial-role">Plant Manager — Manufacturing</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal reveal-delay-2">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"Doug's team engineered a pretreatment system for our food processing line that exceeded our specifications. The documentation and commissioning process was the most thorough we've experienced from any vendor."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">KM</div>
+              <div>
+                <div class="testimonial-name">K. Mitchell</div>
+                <div class="testimonial-role">Director of Operations — Food Processing</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial reveal reveal-delay-3">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>"What sets Hoffman apart is the chemical engineering perspective. They don't just sell equipment — they understand why the water behaves the way it does and design around that. Night and day from our previous vendor."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">DW</div>
+              <div>
+                <div class="testimonial-name">D. Weaver</div>
+                <div class="testimonial-role">Facilities Engineer — Healthcare System</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT / FOUNDER
+         ============================================================ -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-image reveal">
+            <!-- Placeholder: Replace with photo of Doug Hoffman or the Hoffman Water team -->
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80" alt="Industrial water treatment professional inspecting equipment" loading="lazy">
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <div class="section-tag">About Hoffman Soft Water</div>
+            <h2>A New Division. The Same Standard.</h2>
+            <p>Doug Hoffman, President and Founder of Hoffman Water, has been in the water treatment and specialty chemicals industry <strong>since 1998</strong>. He received his <strong>B.S. in Chemical Engineering</strong> from The University of Cincinnati and built his career selling and servicing industrial customers who demand precision and reliability.</p>
+            <p>As Hoffman Water became a recognized force in the pretreatment arena — customers looking for a high level of attention to detail and quality — the decision to launch a dedicated division became clear. Hoffman Soft Water carries the same mission, the same engineering rigor, and the same obsession with getting it right.</p>
+            <p><em>"A different animal with the same mission."</em></p>
+
+            <div class="about-stats">
+              <div class="about-stat">
+                <div class="num">1998</div>
+                <div class="lbl">Founded</div>
+              </div>
+              <div class="about-stat">
+                <div class="num">25+</div>
+                <div class="lbl">Years Experience</div>
+              </div>
+              <div class="about-stat">
+                <div class="num">Ohio+</div>
+                <div class="lbl">Service Area</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="faq-header reveal">
+          <div class="section-tag">FAQ</div>
+          <h2>Common Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">What's the relationship between Hoffman Water and Hoffman Soft Water?</button>
+            <div class="faq-a"><div class="faq-a-inner">Hoffman Soft Water is a dedicated pretreatment division of Hoffman Water LLC. The parent company — Hoffman Water — has been providing industrial water treatment services (boilers, cooling towers, closed loops, wastewater, and specialty chemicals) since 1998. As demand grew for focused pretreatment solutions, we launched Hoffman Soft Water to give that segment the dedicated attention it deserves. Same team, same engineering standards, same mission.</div></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">What types of pretreatment systems do you install?</button>
+            <div class="faq-a"><div class="faq-a-inner">We engineer and install commercial and industrial water softeners (ion exchange), reverse osmosis systems, deionization (DI) systems, multimedia filtration, activated carbon systems, and specialty treatment solutions. Every system is custom-designed based on your facility's water analysis, flow requirements, and application demands.</div></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">How is this different from calling a residential water softener company?</button>
+            <div class="faq-a"><div class="faq-a-inner">Residential companies install cookie-cutter systems. We engineer solutions for facilities with complex water chemistry, high flow rates, and critical operational requirements. Our founder is a chemical engineer, our team understands industrial process water, and we back our equipment with ongoing chemical treatment programs and performance monitoring. The difference shows up in system longevity, operational efficiency, and total cost of ownership.</div></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">What does a commercial pretreatment system cost?</button>
+            <div class="faq-a"><div class="faq-a-inner">Commercial softener installations typically range from <strong>$5,000 to $20,000+</strong>. Industrial pretreatment systems (RO, DI, multi-stage) start around <strong>$15,000</strong> and can exceed <strong>$50,000</strong> for complex applications. We provide detailed, engineered proposals with transparent pricing after the site assessment — no ballpark guesses and no hidden fees.</div></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">What areas do you serve?</button>
+            <div class="faq-a"><div class="faq-a-inner">We're headquartered in Urbana, Ohio and serve industrial and commercial facilities across Ohio, with a strong focus on the Greater Cincinnati market. For large-scale industrial projects, we regularly work beyond our core service area. Contact us to discuss your location and requirements.</div></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">Do you provide ongoing maintenance and chemical programs?</button>
+            <div class="faq-a"><div class="faq-a-inner">Absolutely. Pretreatment systems require ongoing attention — salt management, membrane care, resin replacement, and water chemistry monitoring. We offer comprehensive service agreements and pair equipment maintenance with our specialty chemical programs (corrosion inhibitors, biocides, coagulants) for complete water management.</div></div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">We already use Hoffman Water for our boiler program. Can you handle our pretreatment too?</button>
+            <div class="faq-a"><div class="faq-a-inner">That's exactly why we built this division. If we're already treating your boiler, cooling tower, or closed loop — we already know your water chemistry, your facility, and your operational requirements. Adding pretreatment under the Hoffman umbrella means one vendor, one relationship, and a fully integrated water management strategy.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT
+         ============================================================ -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="section-tag">Get Started</div>
+            <h2>Request a Site Assessment</h2>
+            <p class="section-desc">Tell us about your facility and we'll schedule an on-site water analysis and system evaluation with our engineering team. No obligation, no sales pressure — just data and a recommendation.</p>
+
+            <ul class="contact-details">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <strong>(937) 508-8739</strong>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <strong>info@hoffmansoftwater.com</strong>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                201 W Reynolds St, Urbana, OH 43078
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <a href="https://www.hoffmanwater.com" target="_blank" rel="noopener">hoffmanwater.com</a> (Parent Company)
+              </li>
+            </ul>
+
+            <div class="trust-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>No obligation site assessment. We'll test your water, evaluate your systems, and deliver an engineered recommendation — whether you engage us or not.</span>
+            </div>
+          </div>
+
+          <form class="contact-form reveal reveal-delay-1" action="#" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="company">Company / Facility</label>
+                <input type="text" id="company" name="company" placeholder="Organization name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(937) 555-0000">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="facility-type">Facility Type</label>
+                <select id="facility-type" name="facility-type">
+                  <option value="">Select type</option>
+                  <option value="manufacturing">Manufacturing Plant</option>
+                  <option value="commercial-building">Commercial Building</option>
+                  <option value="food-bev">Food &amp; Beverage</option>
+                  <option value="pharma">Pharmaceutical / Lab</option>
+                  <option value="healthcare">Healthcare / Hospital</option>
+                  <option value="hospitality">Hotel / Hospitality</option>
+                  <option value="data-center">Data Center</option>
+                  <option value="other">Other Industrial</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" name="zip" placeholder="43078">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Facility &amp; Needs</label>
+              <textarea id="message" name="message" placeholder="Current water treatment setup, pain points, system types, flow rates — anything relevant."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg form-submit">Request Site Assessment</button>
+            <p class="form-note">We'll respond within one business day with next steps.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-mark">
+              <svg viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 2C22 2 40 20 40 32C40 42 32 50 22 50C12 50 4 42 4 32C4 20 22 2 22 2Z" stroke="#29ABE2" stroke-width="2.5" fill="none"/>
+                <path d="M10 38C10 38 6 28 22 14" stroke="#5BC4F0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+            </div>
+            <div class="logo-text-group">
+              <div class="logo-hoffman"><span class="logo-h2o">H<sub>2</sub>O</span>FFMAN</div>
+              <div class="logo-soft">soft water</div>
+            </div>
+          </a>
+          <p>Industrial-grade pretreatment, commercial water softening, and engineered water quality solutions. A dedicated division of Hoffman Water.</p>
+          <div class="footer-parent">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Parent company: <a href="https://www.hoffmanwater.com" target="_blank" rel="noopener">hoffmanwater.com</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Commercial Softening</a></li>
+            <li><a href="#services">Reverse Osmosis</a></li>
+            <li><a href="#services">Deionization</a></li>
+            <li><a href="#services">Filtration Systems</a></li>
+            <li><a href="#services">Chemical Programs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <ul>
+            <li><a href="#industries">Manufacturing</a></li>
+            <li><a href="#industries">Food &amp; Beverage</a></li>
+            <li><a href="#industries">Pharmaceutical</a></li>
+            <li><a href="#industries">Healthcare</a></li>
+            <li><a href="#industries">Data Centers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#why-hoffman">Why Hoffman</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.hoffmanwater.com" target="_blank" rel="noopener">Hoffman Water</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Hoffman Soft Water — A Division of Hoffman Water LLC. All rights reserved.</span>
+        <span>201 W Reynolds St, Urbana, OH 43078</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA bar -->
+  <div class="mobile-cta-bar" id="mobileCta">
+    <a href="tel:+19375088739" class="mobile-cta-phone">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+    <a href="#contact" class="mobile-cta-assess">Get Free Assessment</a>
+  </div>
+
+  <!-- ============================================================
+       JS: Nav scroll, hamburger, FAQ, scroll reveal
+       ============================================================ -->
+  <script>
+    // Header scroll effect + mobile CTA bar
+    const header = document.getElementById('header');
+    const mobileCta = document.getElementById('mobileCta');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      header.classList.toggle('scrolled', y > 40);
+      // Show mobile CTA after scrolling past hero (~500px)
+      if (mobileCta) mobileCta.classList.toggle('visible', y > 500);
+    }, { passive: true });
+
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-q').forEach(other => {
+          other.setAttribute('aria-expanded', 'false');
+          other.nextElementSibling.style.maxHeight = null;
+        });
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // Scroll-triggered reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Water hardness dial animation — smooth with requestAnimationFrame
+    const dialContainer = document.querySelector('.dial-container');
+    if (dialContainer) {
+      const dialObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const fill = dialContainer.querySelector('.dial-fill');
+            const needle = dialContainer.querySelector('.dial-needle');
+            const dialNumber = dialContainer.querySelector('.dial-number');
+
+            // Trigger CSS transitions
+            if (fill) fill.classList.add('animated');
+            if (needle) needle.classList.add('animated');
+
+            // Smooth number count-up synced to the 2.2s animation
+            if (dialNumber) {
+              const target = 21;
+              const duration = 2200;
+              const start = performance.now();
+              function tick(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease-out curve to match the CSS easing
+                const eased = 1 - Math.pow(1 - progress, 3);
+                dialNumber.textContent = Math.round(eased * target);
+                if (progress < 1) requestAnimationFrame(tick);
+              }
+              requestAnimationFrame(tick);
+            }
+
+            dialObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      dialObserver.observe(dialContainer);
+    }
+  </script>
+
+</body>
+</html>

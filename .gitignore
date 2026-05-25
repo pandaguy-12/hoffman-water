@@ -1,0 +1,20 @@
+# Internal-only documents — never commit to public repo
+BRAND_STRATEGY.md
+DEPLOY.md
+Doug_Email_*.md
+Email_to_Doug_*.md
+Fulfillment_Research_*.md
+Hoffman_Softwater_SEO_Strategy.pdf
+*.docx
+~$*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
