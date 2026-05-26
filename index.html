@@ -485,8 +485,8 @@
       inset: 0;
       background:
         linear-gradient(135deg, rgba(6,42,77,0.92) 0%, rgba(11,61,107,0.78) 50%, rgba(26,111,175,0.65) 100%),
-        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80') center/cover no-repeat;
-      /* Fallback: industrial water/pipes image from Unsplash */
+        url('assets/hero-industrial.jpg') center/cover no-repeat;
+      /* Self-hosted (Unsplash, licensed for commercial use). Optimize further when Doug supplies brand-shot facility imagery. */
     }
 
     /* Animated background elements */
@@ -1089,9 +1089,11 @@
       overflow: hidden;
       aspect-ratio: 4/3;
     }
-    .about-image img {
+    .about-image img,
+    .about-image svg {
       width: 100%; height: 100%;
       object-fit: cover;
+      display: block;
     }
     .about-content h2 { margin-bottom: 1.25rem; }
     .about-content p {
@@ -1658,15 +1660,15 @@
   <header class="header" id="header">
     <div class="container">
       <nav class="nav">
-        <a href="#" class="logo">
+        <a href="#" class="logo" aria-label="Hoffman Soft Water — home">
           <!-- SVG Drop Mark matching the Hoffman Soft Water logo -->
-          <div class="logo-mark">
+          <div class="logo-mark" aria-hidden="true">
             <svg viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M22 2C22 2 40 20 40 32C40 42 32 50 22 50C12 50 4 42 4 32C4 20 22 2 22 2Z" stroke="#29ABE2" stroke-width="2.5" fill="none"/>
               <path d="M10 38C10 38 6 28 22 14" stroke="#5BC4F0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
             </svg>
           </div>
-          <div class="logo-text-group">
+          <div class="logo-text-group" aria-hidden="true">
             <div class="logo-hoffman"><span class="logo-h2o">H<sub>2</sub>O</span>FFMAN</div>
             <div class="logo-soft">soft water</div>
           </div>
@@ -1789,7 +1791,7 @@
         <div class="problem-layout">
           <div class="problem-image reveal">
             <!-- Industrial water treatment imagery -->
-            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&q=80" alt="Industrial water treatment pipes and valves in a commercial facility" loading="lazy">
+            <img src="assets/problem-pipes.jpg" alt="Industrial water treatment pipes and valves in a commercial facility" loading="lazy" width="1200" height="800">
           </div>
 
           <div class="reveal reveal-delay-1">
@@ -1929,7 +1931,7 @@
         <div class="services-grid">
           <div class="service-card reveal reveal-delay-1">
             <div class="service-img">
-              <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=600&q=80" alt="Commercial water softener system installation" loading="lazy">
+              <img src="assets/service-softener.jpg" alt="Commercial water softener system installation" loading="lazy" width="800" height="600">
             </div>
             <div class="service-body">
               <h3>Commercial &amp; Industrial Softening</h3>
@@ -1944,7 +1946,7 @@
 
           <div class="service-card reveal reveal-delay-2">
             <div class="service-img">
-              <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80" alt="Reverse osmosis membrane system in industrial setting" loading="lazy">
+              <img src="assets/service-ro.jpg" alt="Reverse osmosis membrane system in industrial setting" loading="lazy" width="800" height="600">
             </div>
             <div class="service-body">
               <h3>Reverse Osmosis &amp; Deionization</h3>
@@ -1959,7 +1961,7 @@
 
           <div class="service-card reveal reveal-delay-3">
             <div class="service-img">
-              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Industrial filtration and water treatment monitoring" loading="lazy">
+              <img src="assets/problem-pipes.jpg" alt="Industrial water treatment monitoring and valve assembly" loading="lazy" width="1200" height="800">
             </div>
             <div class="service-body">
               <h3>Filtration &amp; Specialty Treatment</h3>
@@ -2147,8 +2149,47 @@
       <div class="container">
         <div class="about-layout">
           <div class="about-image reveal">
-            <!-- Placeholder: Replace with photo of Doug Hoffman or the Hoffman Water team -->
-            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80" alt="Industrial water treatment professional inspecting equipment" loading="lazy">
+            <!-- Brand mark placeholder. Replace with photo of Doug Hoffman when supplied. -->
+            <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hoffman Soft Water — engineer-led pretreatment since 1998" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="amBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#062A4D"/>
+                  <stop offset="100%" stop-color="#0B3D6B"/>
+                </linearGradient>
+                <linearGradient id="amDrop" x1="50%" y1="0%" x2="50%" y2="100%">
+                  <stop offset="0%" stop-color="#29ABE2"/>
+                  <stop offset="100%" stop-color="#1A6FAF"/>
+                </linearGradient>
+                <pattern id="amGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" stroke="rgba(91,196,240,0.06)" stroke-width="1" fill="none"/>
+                </pattern>
+                <radialGradient id="amGlow" cx="80%" cy="20%" r="55%">
+                  <stop offset="0%" stop-color="rgba(41,171,226,0.4)"/>
+                  <stop offset="100%" stop-color="rgba(41,171,226,0)"/>
+                </radialGradient>
+              </defs>
+              <rect width="600" height="450" fill="url(#amBg)"/>
+              <rect width="600" height="450" fill="url(#amGrid)"/>
+              <rect width="600" height="450" fill="url(#amGlow)"/>
+              <g opacity="0.12" transform="translate(430 -20)">
+                <path d="M120 20 C 120 20 235 130 235 225 C 235 280 185 320 120 320 C 55 320 5 280 5 225 C 5 130 120 20 120 20 Z" fill="none" stroke="#5BC4F0" stroke-width="3"/>
+              </g>
+              <g transform="translate(70 130)">
+                <path d="M70 10 C 70 10 130 70 130 110 C 130 140 105 165 70 165 C 35 165 10 140 10 110 C 10 70 70 10 70 10 Z" stroke="url(#amDrop)" stroke-width="4" fill="none"/>
+                <path d="M28 142 C 28 142 18 110 70 60" stroke="#5BC4F0" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+              </g>
+              <text x="230" y="200" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="60" fill="#FFFFFF" letter-spacing="-2">
+                <tspan fill="#29ABE2">H</tspan><tspan font-size="34" dy="-4" fill="#29ABE2">2</tspan><tspan dy="4" fill="#29ABE2">O</tspan><tspan>FFMAN</tspan>
+              </text>
+              <text x="232" y="234" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="20" fill="#5BC4F0" letter-spacing="4">SOFT WATER</text>
+              <g transform="translate(230 270)">
+                <rect width="180" height="34" rx="17" fill="none" stroke="rgba(91,196,240,0.35)" stroke-width="1"/>
+                <text x="90" y="22" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="12" fill="#5BC4F0" letter-spacing="3">EST. 1998 · URBANA, OH</text>
+              </g>
+              <text x="300" y="385" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-style="italic" font-weight="400" font-size="16" fill="rgba(255,255,255,0.65)">
+                A different animal — with the same mission.
+              </text>
+            </svg>
           </div>
 
           <div class="reveal reveal-delay-1">
@@ -2323,14 +2364,14 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">
-            <div class="logo-mark">
+          <a href="#" class="logo" aria-label="Hoffman Soft Water — home">
+            <div class="logo-mark" aria-hidden="true">
               <svg viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 2C22 2 40 20 40 32C40 42 32 50 22 50C12 50 4 42 4 32C4 20 22 2 22 2Z" stroke="#29ABE2" stroke-width="2.5" fill="none"/>
                 <path d="M10 38C10 38 6 28 22 14" stroke="#5BC4F0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
               </svg>
             </div>
-            <div class="logo-text-group">
+            <div class="logo-text-group" aria-hidden="true">
               <div class="logo-hoffman"><span class="logo-h2o">H<sub>2</sub>O</span>FFMAN</div>
               <div class="logo-soft">soft water</div>
             </div>
