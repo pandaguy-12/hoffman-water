@@ -368,13 +368,15 @@
       top: 0; left: 0; right: 0;
       z-index: 1000;
       transition: all 0.35s ease;
-      padding: 0.75rem 0;
+      padding: 0.35rem 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
     }
     .header.scrolled {
-      background: rgba(6, 42, 77, 0.97);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
-      padding: 0.5rem 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 20px rgba(11, 61, 107, 0.08);
+      padding: 0.35rem 0;
     }
 
     .nav {
@@ -426,7 +428,7 @@
       list-style: none;
     }
     .nav-links a {
-      color: rgba(255,255,255,0.7);
+      color: var(--text-secondary);
       font-size: 0.88rem;
       font-weight: 500;
       transition: color var(--transition);
@@ -442,7 +444,7 @@
       background: var(--cyan);
       transition: width var(--transition);
     }
-    .nav-links a:hover { color: var(--white); text-decoration: none; }
+    .nav-links a:hover { color: var(--navy); text-decoration: none; }
     .nav-links a:hover::after { width: 100%; }
 
     .nav-cta {
@@ -457,7 +459,7 @@
 
     .nav-phone {
       font-weight: 600 !important;
-      color: rgba(255,255,255,0.9) !important;
+      color: var(--navy) !important;
     }
 
     .hamburger {
@@ -473,7 +475,7 @@
       display: block;
       width: 22px;
       height: 2px;
-      background: var(--white);
+      background: var(--navy);
       border-radius: 2px;
       transition: all 0.3s;
     }
@@ -525,7 +527,7 @@
       grid-template-columns: 1fr 420px;
       gap: 4rem;
       align-items: center;
-      padding: calc(80px + 3rem) 0 4rem;
+      padding: calc(96px + 2.5rem) 0 4rem;
     }
 
     .hero-content { animation: slideInLeft 0.9s cubic-bezier(0.4, 0, 0.2, 1) both; }
@@ -1568,10 +1570,12 @@
       .nav-links.open a {
         padding: 0.75rem 0;
         font-size: 1.05rem;
+        color: rgba(255,255,255,0.8);
       }
+      .nav-links.open a:hover { color: var(--white); }
 
       .hero { min-height: auto; }
-      .hero-inner { padding: calc(70px + 2rem) 0 3rem; }
+      .hero-inner { padding: calc(100px + 1.5rem) 0 3rem; }
       .hero h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
       .hero-btns { flex-direction: column; }
       .hero-btns .btn { width: 100%; justify-content: center; padding: 1rem 1.5rem; font-size: 1rem; }
@@ -1671,9 +1675,8 @@
 
     /* Real logo image used in nav + footer */
     .logo-img {
-      height: 46px;
+      height: 80px;
       width: auto;
-      border-radius: 7px;
       display: block;
     }
     @media (min-width: 769px) {
@@ -1807,6 +1810,10 @@
           <div class="cred-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span><strong>Same Mission</strong> &mdash; different animal</span>
+          </div>
+          <div class="cred-item">
+            <span style="font-size:1.3rem;line-height:1;flex-shrink:0;">🇺🇸</span>
+            <span><strong>American-Owned &amp; Operated</strong> &mdash; Urbana, Ohio</span>
           </div>
         </div>
       </div>
