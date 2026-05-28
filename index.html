@@ -1668,6 +1668,14 @@
       white-space: nowrap;
     }
     .mobile-cta-assess:hover { color: var(--white); }
+
+    /* Real logo image used in nav + footer */
+    .logo-img {
+      height: 46px;
+      width: auto;
+      border-radius: 7px;
+      display: block;
+    }
     @media (min-width: 769px) {
       .mobile-cta-bar { display: none !important; }
     }
@@ -1687,17 +1695,7 @@
     <div class="container">
       <nav class="nav">
         <a href="#" class="logo" aria-label="Hoffman Soft Water — home">
-          <!-- SVG Drop Mark matching the Hoffman Soft Water logo -->
-          <div class="logo-mark" aria-hidden="true">
-            <svg viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 2C22 2 40 20 40 32C40 42 32 50 22 50C12 50 4 42 4 32C4 20 22 2 22 2Z" stroke="#29ABE2" stroke-width="2.5" fill="none"/>
-              <path d="M10 38C10 38 6 28 22 14" stroke="#5BC4F0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
-            </svg>
-          </div>
-          <div class="logo-text-group" aria-hidden="true">
-            <div class="logo-hoffman"><span class="logo-h2o">H<sub>2</sub>O</span>FFMAN</div>
-            <div class="logo-soft">soft water</div>
-          </div>
+          <img src="assets/Logo.png" alt="Hoffman Soft Water" class="logo-img">
         </a>
 
         <ul class="nav-links" id="navLinks">
@@ -1810,10 +1808,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span><strong>Same Mission</strong> &mdash; different animal</span>
           </div>
-          <div class="cred-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <span><strong>Industrial &amp; Commercial Only</strong> &mdash; not a residential service</span>
-          </div>
         </div>
       </div>
     </div>
@@ -1825,8 +1819,7 @@
       <div class="container">
         <div class="problem-layout">
           <div class="problem-image reveal">
-            <!-- Industrial water treatment imagery -->
-            <img src="assets/problem-pipes.jpg" alt="Industrial water treatment pipes and valves in a commercial facility" loading="lazy" width="1200" height="800">
+            <img src="assets/1775773839253.jpg" alt="Industrial water softening system and SOLIDified chemical feed equipment installed at a commercial facility" loading="lazy" width="800" height="600">
           </div>
 
           <div class="reveal reveal-delay-1">
@@ -1996,7 +1989,7 @@
 
           <div class="service-card reveal reveal-delay-3">
             <div class="service-img">
-              <img src="assets/problem-pipes.jpg" alt="Industrial water treatment monitoring and valve assembly" loading="lazy" width="1200" height="800">
+              <img src="assets/1775773839253.jpg" alt="Industrial water treatment system installation" loading="lazy" width="800" height="600">
             </div>
             <div class="service-body">
               <h3>Filtration &amp; Specialty Treatment</h3>
@@ -2367,16 +2360,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="logo" aria-label="Hoffman Soft Water — home">
-            <div class="logo-mark" aria-hidden="true">
-              <svg viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 2C22 2 40 20 40 32C40 42 32 50 22 50C12 50 4 42 4 32C4 20 22 2 22 2Z" stroke="#29ABE2" stroke-width="2.5" fill="none"/>
-                <path d="M10 38C10 38 6 28 22 14" stroke="#5BC4F0" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
-              </svg>
-            </div>
-            <div class="logo-text-group" aria-hidden="true">
-              <div class="logo-hoffman"><span class="logo-h2o">H<sub>2</sub>O</span>FFMAN</div>
-              <div class="logo-soft">soft water</div>
-            </div>
+            <img src="assets/Logo.png" alt="Hoffman Soft Water" class="logo-img">
           </a>
           <p>Commercial water softening, reverse osmosis, media filtration, solids handling, and ongoing service across Ohio. A dedicated division of Hoffman Water.</p>
           <div class="footer-parent">
