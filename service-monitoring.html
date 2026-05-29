@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0B3D6B">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Commercial &amp; Industrial Water Softener Installation — Ohio | Hoffman Soft Water</title>
-  <meta name="description" content="Custom-engineered commercial and industrial water softener installation across Ohio. Ion exchange systems sized for your facility's flow rates and hardness levels. A division of Hoffman Water — since 1998.">
+  <title>Industrial Water Treatment Service &amp; Monitoring — Ohio | Hoffman Soft Water</title>
+  <meta name="description" content="Ongoing water treatment service, monitoring, and maintenance for Ohio industrial facilities. Salt delivery, water testing, resin care, emergency response. A division of Hoffman Water.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Hoffman Soft Water — A Division of Hoffman Water LLC">
-  <link rel="canonical" href="https://hoffmansoftwater.com/water-softening.html">
+  <link rel="canonical" href="https://hoffmansoftwater.com/service-monitoring.html">
 
   <!-- Favicon / app icon -->
   <link rel="icon" type="image/png" href="assets/Logo.png">
@@ -17,16 +17,16 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hoffmansoftwater.com/water-softening.html">
+  <meta property="og:url" content="https://hoffmansoftwater.com/service-monitoring.html">
   <meta property="og:site_name" content="Hoffman Soft Water">
-  <meta property="og:title" content="Commercial &amp; Industrial Water Softener Installation — Ohio | Hoffman Soft Water">
-  <meta property="og:description" content="Custom-engineered commercial and industrial water softener installation across Ohio. Ion exchange systems sized for your facility's flow rates and hardness levels.">
+  <meta property="og:title" content="Industrial Water Treatment Service &amp; Monitoring — Ohio | Hoffman Soft Water">
+  <meta property="og:description" content="Ongoing water treatment service, monitoring, and maintenance for Ohio industrial facilities. Salt delivery, water testing, resin care, emergency response.">
   <meta property="og:image" content="https://hoffmansoftwater.com/assets/Logo.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Commercial &amp; Industrial Water Softener Installation — Ohio | Hoffman Soft Water">
-  <meta name="twitter:description" content="Custom-engineered commercial and industrial water softener installation across Ohio. Ion exchange systems sized for your facility's flow rates and hardness levels.">
+  <meta name="twitter:title" content="Industrial Water Treatment Service &amp; Monitoring — Ohio | Hoffman Soft Water">
+  <meta name="twitter:description" content="Ongoing water treatment service, monitoring, and maintenance for Ohio industrial facilities. Salt delivery, water testing, resin care, emergency response.">
   <meta name="twitter:image" content="https://hoffmansoftwater.com/assets/Logo.png">
 
   <!-- Fonts: IBM Plex Sans -->
@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Hero image preload -->
-  <link rel="preload" as="image" href="assets/service-softener.jpg">
+  <link rel="preload" as="image" href="assets/1779134977468.jpg">
 
   <!-- Reveal animations rely on JS. Without JS, ensure content is visible. -->
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
@@ -69,14 +69,11 @@
       },
       {
         "@type": "Service",
-        "name": "Commercial & Industrial Water Softening",
-        "serviceType": "Water Softener Installation",
-        "description": "Custom-engineered commercial and industrial ion exchange water softener systems sized for facility flow rates, hardness levels, and equipment protection requirements. Twin alternating, demand-initiated, and multi-stage configurations.",
+        "name": "Industrial Water Treatment Service &amp; Monitoring",
+        "serviceType": "Water Treatment Service",
+        "description": "Ongoing water treatment service, monitoring, and maintenance for Ohio industrial and commercial facilities. Salt delivery, water testing, resin inspection, filter media replacement, performance reporting, and emergency response.",
         "provider": { "@id": "https://hoffmansoftwater.com/#business" },
-        "areaServed": [
-          { "@type": "City", "name": "Cincinnati" },
-          { "@type": "State", "name": "Ohio" }
-        ]
+        "areaServed": { "@type": "State", "name": "Ohio" }
       }
     ]
   }
@@ -84,8 +81,9 @@
 
   <style>
     /* ============================================================
-       HOFFMAN SOFT WATER — WATER SOFTENING PAGE
+       HOFFMAN SOFT WATER — SERVICE & MONITORING PAGE
        CSS variables match index.html exactly. No --font-alt.
+       .header.scrolled has box-shadow only (no background repeat).
        ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -132,11 +130,11 @@
 
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; width: 100%; }
 
-    .sw-hero-content,
-    .sw-hero h1,
-    .sw-hero-sub,
-    .sw-hero-badge,
-    .sw-hero-btns {
+    .sm-hero-content,
+    .sm-hero h1,
+    .sm-hero-sub,
+    .sm-hero-badge,
+    .sm-hero-btns {
       max-width: 100%;
       min-width: 0;
     }
@@ -348,12 +346,10 @@
     .nav-links a:hover { color: var(--navy); text-decoration: none; }
     .nav-links a:hover::after { width: 100%; }
 
-    .nav-dropdown-toggle.active,
     .nav-links a.active {
-      color: var(--white);
-      opacity: 1;
+      color: var(--navy);
     }
-    .nav-dropdown-toggle.active::after {
+    .nav-links a.active::after {
       width: 100%;
     }
 
@@ -401,7 +397,7 @@
       background: var(--white);
       border-bottom: 1px solid var(--border);
       padding: 0.65rem 0;
-      margin-top: 116px; /* header height */
+      margin-top: 116px;
     }
     .breadcrumb-inner {
       display: flex;
@@ -427,7 +423,7 @@
     /* ============================================================
        HERO
        ============================================================ */
-    .sw-hero {
+    .sm-hero {
       position: relative;
       min-height: 92vh;
       display: flex;
@@ -436,40 +432,40 @@
       background: var(--navy-deep);
     }
 
-    .sw-hero-bg {
+    .sm-hero-bg {
       position: absolute;
       inset: 0;
       background:
         linear-gradient(135deg, rgba(6,42,77,0.93) 0%, rgba(11,61,107,0.82) 50%, rgba(26,111,175,0.70) 100%),
-        url('assets/service-softener.jpg') center/cover no-repeat;
+        url('assets/1779134977468.jpg') center/cover no-repeat;
     }
 
-    .sw-hero-particles {
+    .sm-hero-particles {
       position: absolute;
       inset: 0;
       overflow: hidden;
       pointer-events: none;
     }
-    .sw-hero-particles .particle {
+    .sm-hero-particles .particle {
       position: absolute;
       border-radius: 50%;
       background: var(--cyan);
       opacity: 0.07;
       animation: float 6s ease-in-out infinite;
     }
-    .sw-hero-particles .particle:nth-child(1) { width: 280px; height: 280px; top: -40px; right: -40px; animation-delay: 0s; }
-    .sw-hero-particles .particle:nth-child(2) { width: 180px; height: 180px; bottom: 12%; left: -20px; animation-delay: 2s; }
-    .sw-hero-particles .particle:nth-child(3) { width: 100px; height: 100px; top: 35%; right: 22%; animation-delay: 4s; opacity: 0.04; }
+    .sm-hero-particles .particle:nth-child(1) { width: 280px; height: 280px; top: -40px; right: -40px; animation-delay: 0s; }
+    .sm-hero-particles .particle:nth-child(2) { width: 180px; height: 180px; bottom: 12%; left: -20px; animation-delay: 2s; }
+    .sm-hero-particles .particle:nth-child(3) { width: 100px; height: 100px; top: 35%; right: 22%; animation-delay: 4s; opacity: 0.04; }
 
-    .sw-hero-inner {
+    .sm-hero-inner {
       position: relative;
       z-index: 2;
       padding: 3rem 0 5rem;
-      max-width: 800px;
+      max-width: 820px;
       animation: slideInLeft 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
     }
 
-    .sw-hero-badge {
+    .sm-hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -483,14 +479,14 @@
       margin-bottom: 1.75rem;
       backdrop-filter: blur(4px);
     }
-    .sw-hero-badge .dot {
+    .sm-hero-badge .dot {
       width: 6px; height: 6px;
       background: var(--success);
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
 
-    .sw-hero h1 {
+    .sm-hero h1 {
       font-size: clamp(2rem, 4.5vw, 3.2rem);
       font-weight: 900;
       color: var(--white);
@@ -499,21 +495,21 @@
       margin-bottom: 1.5rem;
     }
 
-    .sw-hero-sub {
+    .sm-hero-sub {
       font-size: 1.1rem;
       color: rgba(255,255,255,0.82);
-      max-width: 640px;
+      max-width: 660px;
       line-height: 1.65;
       margin-bottom: 2rem;
     }
 
-    .sw-hero-trust {
+    .sm-hero-trust {
       display: flex;
       gap: 1.25rem;
       flex-wrap: wrap;
       margin-bottom: 2.5rem;
     }
-    .sw-hero-trust-badge {
+    .sm-hero-trust-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
@@ -528,46 +524,46 @@
       color: rgba(255,255,255,0.8);
     }
 
-    .sw-hero-btns {
+    .sm-hero-btns {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
     /* ============================================================
-       PROBLEM SECTION
+       PROBLEM SECTION — 2 col text left, image right
        ============================================================ */
-    .sw-problem {
+    .sm-problem {
       padding: var(--section-py) 0;
       background: var(--white);
     }
 
-    .sw-problem-layout {
+    .sm-problem-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .sw-problem-text h2 { margin-bottom: 1.25rem; }
-    .sw-problem-text p {
+    .sm-problem-text h2 { margin-bottom: 1.25rem; }
+    .sm-problem-text p {
       color: var(--text-secondary);
       margin-bottom: 1rem;
       line-height: 1.7;
     }
 
-    .sw-problem-image {
+    .sm-problem-image {
       border-radius: var(--radius);
       overflow: hidden;
       aspect-ratio: 4/3;
     }
-    .sw-problem-image img {
+    .sm-problem-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .sw-problem-image:hover img { transform: scale(1.03); }
+    .sm-problem-image:hover img { transform: scale(1.03); }
 
     .problem-list { list-style: none; margin-top: 2rem; }
     .problem-list li {
@@ -606,419 +602,66 @@
     }
 
     /* ============================================================
-       HARDNESS STATS BAR
+       WHAT'S INCLUDED — service list + callout card
        ============================================================ */
-    .sw-stats {
-      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, var(--blue) 100%);
-      padding: clamp(3rem, 6vw, 5rem) 0;
+    .sm-included {
+      padding: var(--section-py) 0;
+      background: var(--bg);
     }
 
-    .sw-stats-grid {
+    .sm-included-layout {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
     }
 
-    .sw-stat-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 2rem;
-      text-align: center;
+    .sm-included-left h2 { margin-bottom: 1.5rem; }
+
+    .sm-service-list { list-style: none; }
+    .sm-service-list li {
+      display: flex;
+      gap: 1rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border);
       transition: all var(--transition);
     }
-    .sw-stat-card:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(41,171,226,0.3);
-      transform: translateY(-3px);
+    .sm-service-list li:hover {
+      padding-left: 0.5rem;
+      border-color: var(--cyan);
     }
-    .sw-stat-number {
-      font-size: 2.5rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--white), var(--sky));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 0.5rem;
+    .sm-service-list li:last-child { border: none; }
+    .sm-service-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--sky-pale), #D4EEFF);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
     }
-    .sw-stat-label {
+    .sm-service-icon svg { width: 20px; height: 20px; color: var(--blue); }
+    .sm-service-list h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+      color: var(--navy);
+    }
+    .sm-service-list p {
       font-size: 0.88rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 0.4rem;
-    }
-    .sw-stat-detail {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.4);
+      color: var(--text-secondary);
       line-height: 1.5;
     }
 
-    /* ============================================================
-       COMMERCIAL VS RESIDENTIAL
-       ============================================================ */
-    .sw-compare {
-      padding: var(--section-py) 0;
-      background: var(--white);
-    }
-
-    .sw-compare-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .sw-compare-text h2 { margin-bottom: 1.25rem; }
-    .sw-compare-text p {
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-      line-height: 1.7;
-    }
-
-    .sw-compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .sw-compare-th {
-      padding: 0.85rem 1.25rem;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      text-align: left;
-    }
-    .sw-compare-th.residential {
-      background: #FEF3C7;
-      color: #92400E;
-      border-bottom: 1px solid #FDE68A;
-    }
-    .sw-compare-th.hoffman {
-      background: var(--sky-pale);
-      color: var(--navy);
-      border-bottom: 1px solid #BAE6FD;
-      border-left: 1px solid var(--border);
-    }
-    .sw-compare-row {
-      border-bottom: 1px solid var(--border);
-    }
-    .sw-compare-row:last-child { border: none; }
-    .sw-compare-cell {
-      padding: 0.85rem 1.25rem;
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      line-height: 1.45;
-      width: 50%;
-    }
-    .sw-compare-cell.hoffman-cell {
-      border-left: 1px solid var(--border);
-      color: var(--navy);
-      font-weight: 500;
-    }
-
-    /* ============================================================
-       SYSTEM TYPES — 3 CARDS
-       ============================================================ */
-    .sw-systems {
-      padding: var(--section-py) 0;
-      background: var(--bg);
-    }
-
-    .sw-systems-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 3rem;
-    }
-    .sw-systems-header .section-desc { margin: 0 auto; }
-
-    .sw-systems-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.75rem;
-      margin-bottom: 3rem;
-    }
-
-    .sw-system-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-      transition: all var(--transition);
-    }
-    .sw-system-card:hover {
-      border-color: var(--cyan);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-    }
-
-    .sw-system-icon {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--sky-pale), #D4EEFF);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-    .sw-system-icon svg { width: 24px; height: 24px; color: var(--blue); }
-
-    .sw-system-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
-    .sw-system-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
-
-    .sw-system-best {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--cyan);
-      margin-bottom: 0.3rem;
-    }
-    .sw-system-best-for {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-    }
-
-    .sw-systems-feature-img {
-      border-radius: var(--radius);
-      overflow: hidden;
-      aspect-ratio: 16/9;
-    }
-    .sw-systems-feature-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* ============================================================
-       APPLICATIONS GRID
-       ============================================================ */
-    .sw-applications {
-      padding: var(--section-py) 0;
-      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, var(--blue) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .sw-applications::before {
-      content: '';
-      position: absolute;
-      top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(41,171,226,0.08), transparent 70%);
-      pointer-events: none;
-    }
-
-    .sw-applications .section-tag { color: var(--sky); }
-    .sw-applications .section-tag::before { background: var(--sky); }
-
-    .sw-applications-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 3rem;
-    }
-    .sw-applications-header h2 { color: var(--white); }
-    .sw-applications-header .section-desc { color: rgba(255,255,255,0.6); margin: 0 auto; }
-
-    .sw-app-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .sw-app-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      transition: all var(--transition);
-      position: relative;
-    }
-    .sw-app-card:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(41,171,226,0.3);
-      transform: translateY(-3px);
-    }
-    .sw-app-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 1.5rem; right: 1.5rem;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cyan), transparent);
-      opacity: 0;
-      transition: opacity var(--transition);
-    }
-    .sw-app-card:hover::before { opacity: 1; }
-
-    .sw-app-icon {
-      width: 44px; height: 44px;
-      background: rgba(41,171,226,0.12);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .sw-app-icon svg { width: 22px; height: 22px; color: var(--sky); }
-
-    .sw-app-card h3 { color: var(--white); font-size: 0.98rem; margin-bottom: 0.4rem; }
-    .sw-app-card p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
-
-    /* ============================================================
-       WHY HOFFMAN — PILLARS
-       ============================================================ */
-    .sw-why {
-      padding: var(--section-py) 0;
-      background: var(--white);
-    }
-
-    .sw-why-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 3rem;
-    }
-
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .pillar {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      transition: all var(--transition);
-      position: relative;
-    }
-    .pillar:hover {
-      border-color: var(--cyan);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-    }
-    .pillar::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 1.5rem; right: 1.5rem;
-      height: 2px;
-      background: linear-gradient(90deg, var(--cyan), transparent);
-      opacity: 0;
-      transition: opacity var(--transition);
-    }
-    .pillar:hover::before { opacity: 1; }
-
-    .pillar-icon {
-      width: 44px; height: 44px;
-      background: linear-gradient(135deg, var(--sky-pale), #D4EEFF);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .pillar-icon svg { width: 22px; height: 22px; color: var(--blue); }
-
-    .pillar h3 { color: var(--navy); font-size: 1rem; margin-bottom: 0.4rem; }
-    .pillar p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; }
-
-    /* ============================================================
-       PROCESS — 4 STEPS
-       ============================================================ */
-    .sw-process {
-      padding: var(--section-py) 0;
-      background: var(--bg);
-    }
-    .sw-process-header {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 3.5rem;
-    }
-
-    .process-timeline {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
-    .process-timeline::before {
-      content: '';
-      position: absolute;
-      top: 32px;
-      left: calc(12.5% + 8px);
-      right: calc(12.5% + 8px);
-      height: 2px;
-      background: linear-gradient(90deg, var(--cyan), var(--blue));
-      opacity: 0.3;
-    }
-
-    .process-step {
-      text-align: center;
-      position: relative;
-      padding: 0 1rem;
-    }
-    .step-circle {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--cyan), var(--blue));
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 4px 15px var(--cta-glow);
-      transition: all var(--transition);
-    }
-    .process-step:hover .step-circle {
-      transform: scale(1.1);
-      box-shadow: 0 6px 25px var(--cta-glow);
-    }
-    .step-circle span {
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: var(--white);
-    }
-    .process-step h3 { font-size: 1rem; margin-bottom: 0.35rem; }
-    .process-step p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      max-width: 200px;
-      margin: 0 auto;
-    }
-
-    /* ============================================================
-       PRICING
-       ============================================================ */
-    .sw-pricing {
-      padding: var(--section-py) 0;
-      background: var(--white);
-    }
-
-    .sw-pricing-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .sw-pricing-text h2 { margin-bottom: 1.25rem; }
-    .sw-pricing-text p {
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-      line-height: 1.7;
-    }
-
-    .sw-pricing-callout {
+    .sm-midnight-callout {
       background: linear-gradient(135deg, var(--navy-deep), var(--navy));
       border-radius: var(--radius);
       padding: 2.5rem;
       position: relative;
       overflow: hidden;
     }
-    .sw-pricing-callout::before {
+    .sm-midnight-callout::before {
       content: '';
       position: absolute;
       top: -80px; right: -80px;
@@ -1026,15 +669,25 @@
       background: radial-gradient(circle, rgba(41,171,226,0.12), transparent 70%);
       pointer-events: none;
     }
-    .sw-pricing-callout h3 {
+    .sm-midnight-callout-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--sky);
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sm-midnight-callout h3 {
       color: var(--white);
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 800;
       margin-bottom: 1rem;
       position: relative;
       z-index: 1;
     }
-    .sw-pricing-callout p {
+    .sm-midnight-callout p {
       color: rgba(255,255,255,0.65);
       font-size: 0.95rem;
       line-height: 1.65;
@@ -1042,25 +695,222 @@
       position: relative;
       z-index: 1;
     }
-    .sw-pricing-callout .btn { position: relative; z-index: 1; }
+    .sm-midnight-callout .btn { position: relative; z-index: 1; }
+
+    /* ============================================================
+       EMERGENCY — navy bg, centered
+       ============================================================ */
+    .sm-emergency {
+      padding: var(--section-py) 0;
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, var(--blue) 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .sm-emergency::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(41,171,226,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .sm-emergency .section-tag { color: var(--sky); }
+    .sm-emergency .section-tag::before { background: var(--sky); }
+
+    .sm-emergency-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .sm-emergency h2 {
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+    .sm-emergency p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .sm-phone-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(41,171,226,0.4);
+      border-radius: var(--radius);
+      padding: 1.25rem 2.5rem;
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: all var(--transition);
+      margin-bottom: 1.25rem;
+    }
+    .sm-phone-cta:hover {
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(41,171,226,0.7);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .sm-phone-cta svg { color: var(--cyan); flex-shrink: 0; }
+    .sm-emergency-secondary {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ============================================================
+       SERVICE TIERS — 3 cards
+       ============================================================ */
+    .sm-tiers {
+      padding: var(--section-py) 0;
+      background: var(--bg);
+    }
+    .sm-tiers-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+    .sm-tiers-header .section-desc { margin: 0 auto; }
+
+    .sm-tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sm-tier-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .sm-tier-card:hover {
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .sm-tier-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+    .sm-tier-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .sm-tier-includes {
+      list-style: none;
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .sm-tier-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      padding: 0.3rem 0;
+    }
+    .sm-tier-includes li svg { width: 14px; height: 14px; color: var(--success); flex-shrink: 0; margin-top: 0.2rem; }
+
+    .sm-tiers-note {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+    .sm-tiers-note a { color: var(--cyan); }
+
+    /* ============================================================
+       SINGLE VENDOR — 2 col
+       ============================================================ */
+    .sm-vendor {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
+    .sm-vendor-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .sm-vendor-text h2 { margin-bottom: 1.25rem; }
+    .sm-vendor-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .sm-vendor-points { list-style: none; margin-top: 0.5rem; }
+    .sm-vendor-points li {
+      display: flex;
+      gap: 1rem;
+      padding: 1.1rem;
+      margin-bottom: 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .sm-vendor-points li:hover {
+      border-color: var(--cyan);
+      background: var(--sky-pale);
+    }
+    .sm-vendor-points li:last-child { margin-bottom: 0; }
+    .sm-vendor-point-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--sky-pale), #D4EEFF);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sm-vendor-point-icon svg { width: 18px; height: 18px; color: var(--blue); }
+    .sm-vendor-points h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+      color: var(--navy);
+    }
+    .sm-vendor-points p {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0;
+    }
 
     /* ============================================================
        CONTACT CTA
        ============================================================ */
-    .sw-contact {
+    .sm-contact {
       padding: var(--section-py) 0;
       background: var(--bg);
     }
-    .sw-contact-grid {
+    .sm-contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: start;
     }
-    .sw-contact-info .section-desc { margin-bottom: 2rem; }
+    .sm-contact-info .section-desc { margin-bottom: 2rem; }
 
-    .sw-contact-details { list-style: none; margin-bottom: 2rem; }
-    .sw-contact-details li {
+    .sm-contact-details { list-style: none; margin-bottom: 2rem; }
+    .sm-contact-details li {
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -1068,8 +918,8 @@
       font-size: 0.95rem;
       color: var(--text-secondary);
     }
-    .sw-contact-details svg { width: 20px; height: 20px; color: var(--cyan); flex-shrink: 0; }
-    .sw-contact-details strong { color: var(--text); }
+    .sm-contact-details svg { width: 20px; height: 20px; color: var(--cyan); flex-shrink: 0; }
+    .sm-contact-details strong { color: var(--text); }
 
     .trust-note {
       background: linear-gradient(135deg, var(--sky-pale), #D4F0FF);
@@ -1266,11 +1116,10 @@
        RESPONSIVE
        ============================================================ */
     @media (max-width: 1024px) {
-      .sw-problem-layout { grid-template-columns: 1fr; }
-      .sw-compare-layout { grid-template-columns: 1fr; }
-      .sw-systems-grid { grid-template-columns: 1fr 1fr; }
-      .sw-pricing-layout { grid-template-columns: 1fr; }
-      .sw-contact-grid { grid-template-columns: 1fr; }
+      .sm-problem-layout { grid-template-columns: 1fr; }
+      .sm-included-layout { grid-template-columns: 1fr; }
+      .sm-vendor-layout { grid-template-columns: 1fr; }
+      .sm-contact-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -1300,42 +1149,39 @@
 
       .breadcrumb { margin-top: 100px; }
 
-      .sw-hero { min-height: auto; }
-      .sw-hero-inner { padding: 2rem 0 3rem; }
-      .sw-hero h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
-      .sw-hero-btns { flex-direction: column; }
-      .sw-hero-btns .btn { width: 100%; justify-content: center; padding: 1rem 1.5rem; font-size: 1rem; }
-      .sw-hero-trust { gap: 0.75rem; }
+      .sm-hero { min-height: auto; }
+      .sm-hero-inner { padding: 2rem 0 3rem; }
+      .sm-hero h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+      .sm-hero-btns { flex-direction: column; }
+      .sm-hero-btns .btn { width: 100%; justify-content: center; padding: 1rem 1.5rem; font-size: 1rem; }
+      .sm-hero-trust { gap: 0.75rem; }
 
-      .sw-stats-grid { grid-template-columns: 1fr; }
-      .sw-systems-grid { grid-template-columns: 1fr; }
-      .sw-app-grid { grid-template-columns: 1fr 1fr; }
-      .pillars { grid-template-columns: 1fr; }
-      .process-timeline { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .process-timeline::before { display: none; }
+      .sm-tiers-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
+
+      .sm-phone-cta { font-size: 1.15rem; padding: 1rem 1.75rem; }
 
       .container { padding: 0 1.25rem; }
       .section-tag { font-size: 0.72rem; }
 
       .btn { min-height: 48px; }
-      .sw-contact-details li { padding: 0.85rem 0; }
+      .sm-contact-details li { padding: 0.85rem 0; }
 
       .mobile-cta-bar { display: flex; }
       body { padding-bottom: 65px; }
     }
 
     @media (max-width: 480px) {
-      .sw-app-grid { grid-template-columns: 1fr; }
+      .sm-tiers-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 380px) {
       h2 { font-size: 1.5rem; }
-      .sw-hero h1 { font-size: 1.5rem; }
+      .sm-hero h1 { font-size: 1.5rem; }
       .container { padding: 0 1rem; }
       .btn { padding: 0.85rem 1.25rem; font-size: 0.92rem; }
-      .process-timeline { grid-template-columns: 1fr; }
+      .sm-phone-cta { font-size: 1rem; }
     }
 
     @media (min-width: 769px) {
@@ -1355,7 +1201,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .sw-hero-inner, .sw-hero-content { animation: none; }
+      .sm-hero-inner { animation: none; }
       .reveal { transition: none !important; }
       * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
     }
@@ -1400,7 +1246,7 @@
         <span class="breadcrumb-sep" aria-hidden="true">&#8250;</span>
         <span>Services</span>
         <span class="breadcrumb-sep" aria-hidden="true">&#8250;</span>
-        <span class="breadcrumb-current" aria-current="page">Water Softening</span>
+        <span class="breadcrumb-current" aria-current="page">Ongoing Service &amp; Monitoring</span>
       </div>
     </div>
   </nav>
@@ -1410,42 +1256,42 @@
     <!-- ============================================================
          HERO
          ============================================================ -->
-    <section class="sw-hero" id="hero">
-      <div class="sw-hero-bg" aria-hidden="true"></div>
-      <div class="sw-hero-particles" aria-hidden="true">
+    <section class="sm-hero" id="hero">
+      <div class="sm-hero-bg" aria-hidden="true"></div>
+      <div class="sm-hero-particles" aria-hidden="true">
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
       </div>
 
       <div class="container">
-        <div class="sw-hero-inner">
-          <div class="sw-hero-badge">
+        <div class="sm-hero-inner">
+          <div class="sm-hero-badge">
             <span class="dot"></span>
             A Division of Hoffman Water &mdash; Industrial Water Treatment Since 1998
           </div>
 
-          <h1>Commercial &amp; Industrial Water Softener Installation &mdash; Ohio</h1>
+          <h1>We Don&rsquo;t Just Install. We Stay.</h1>
 
-          <p class="sw-hero-sub">High-capacity ion exchange systems engineered for your facility's flow rates, hardness levels, and equipment demands. Not a residential company &mdash; a chemical engineering firm.</p>
+          <p class="sm-hero-sub">Ongoing water treatment service, monitoring, and maintenance for Ohio industrial and commercial facilities. When something goes wrong at midnight, we answer.</p>
 
-          <div class="sw-hero-trust">
-            <span class="sw-hero-trust-badge">
+          <div class="sm-hero-trust">
+            <span class="sm-hero-trust-badge">
               <svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Chemical Engineer-Led
+              Emergency Response Available
             </span>
-            <span class="sw-hero-trust-badge">
+            <span class="sm-hero-trust-badge">
               <svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Since 1998
+              Serving Ohio Since 1998
             </span>
-            <span class="sw-hero-trust-badge">
+            <span class="sm-hero-trust-badge">
               <svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              25+ Years
+              One Vendor, Complete Water Management
             </span>
           </div>
 
-          <div class="sw-hero-btns">
-            <a href="index.html#contact" class="btn btn-primary btn-lg">Request a Site Assessment</a>
+          <div class="sm-hero-btns">
+            <a href="#contact" class="btn btn-primary btn-lg">Schedule a Service Call</a>
             <a href="tel:+19375088739" class="btn btn-secondary btn-lg">
               <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               Call 24/7: (937) 508-8739
@@ -1456,47 +1302,26 @@
     </section>
 
     <!-- ============================================================
-         THE PROBLEM
+         THE PROBLEM — text left, image right
          ============================================================ -->
-    <section class="sw-problem" id="problem">
+    <section class="sm-problem" id="problem">
       <div class="container">
-        <div class="sw-problem-layout">
-          <div class="sw-problem-image reveal">
-            <img src="assets/1778003899420.jpg" alt="Commercial water treatment system installed in an Ohio industrial facility" loading="lazy" width="800" height="600">
-          </div>
+        <div class="sm-problem-layout">
 
-          <div class="reveal reveal-delay-1">
-            <div class="section-tag">The Problem</div>
-            <h2>Ohio's Hard Water Is Destroying Your Equipment</h2>
-            <p>Cincinnati and the greater Ohio region falls into the second-highest national water hardness category &mdash; 115&ndash;135 mg/L. Every pipe, boiler, cooling tower, and piece of water-using equipment in your facility is under constant mineral assault.</p>
-            <p>Scale builds at roughly 1/16 inch per year on heat exchange surfaces at these hardness levels &mdash; enough to raise energy consumption by up to 29% and cut equipment lifespan in half. The cost isn't just the equipment. It's the downtime, the emergency repairs, and the energy bills every month.</p>
+          <div class="reveal">
+            <div class="section-tag">Why Service Matters</div>
+            <h2>Most Companies Install the System. We Manage It.</h2>
+            <p>A water softener or filtration system that isn&rsquo;t maintained stops performing &mdash; resin gets fouled, salt bridges form, media exhausts. At that point, the equipment your facility depended on becomes the source of the problem it was installed to prevent.</p>
+            <p>We built Hoffman Soft Water as a service-first business. Every system we install comes with the option for a service agreement &mdash; regular site visits, water testing, performance reporting, and responsive support when something goes sideways. The account relationship matters more to us than the equipment sale.</p>
 
             <ul class="problem-list">
               <li>
                 <div class="problem-icon-sm">
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="5"/></svg>
                 </div>
                 <div>
-                  <h4>Boiler &amp; Cooling Tower Scale</h4>
-                  <p>Mineral buildup reduces heat transfer, increases fuel consumption, and accelerates tube failure.</p>
-                </div>
-              </li>
-              <li>
-                <div class="problem-icon-sm">
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                </div>
-                <div>
-                  <h4>Unplanned Downtime</h4>
-                  <p>Scaled heating elements and fouled membranes lead to emergency shutdowns and repair bills.</p>
-                </div>
-              </li>
-              <li>
-                <div class="problem-icon-sm">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                </div>
-                <div>
-                  <h4>Process Water Quality</h4>
-                  <p>Hard water compromises manufacturing consistency, pharmaceutical purity, and food processing compliance.</p>
+                  <h4>Resin Fouling &amp; Degradation</h4>
+                  <p>Softener resin has a service life. Fouled or depleted resin means hard water passes through regardless of salt levels.</p>
                 </div>
               </li>
               <li>
@@ -1504,332 +1329,293 @@
                   <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
                 </div>
                 <div>
-                  <h4>Energy Waste</h4>
-                  <p>Scaled systems consume up to 29% more energy &mdash; per U.S. Department of Energy data.</p>
+                  <h4>Salt Bridging &amp; Mushing</h4>
+                  <p>Improperly maintained brine tanks form bridges that look full but aren&rsquo;t regenerating.</p>
+                </div>
+              </li>
+              <li>
+                <div class="problem-icon-sm">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+                </div>
+                <div>
+                  <h4>Filter Media Exhaustion</h4>
+                  <p>Multimedia and carbon media needs periodic replacement. An exhausted filter does nothing.</p>
+                </div>
+              </li>
+              <li>
+                <div class="problem-icon-sm">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+                </div>
+                <div>
+                  <h4>Chemistry Drift</h4>
+                  <p>Water chemistry changes seasonally. Programs calibrated for one set of conditions can underperform as conditions shift.</p>
                 </div>
               </li>
             </ul>
           </div>
+
+          <div class="sm-problem-image reveal reveal-delay-1">
+            <img src="assets/1778003899420.jpg" alt="Industrial water treatment system with piping and metering equipment at an Ohio facility" loading="lazy" width="800" height="600">
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         HARDNESS STATS BAR
+         WHAT'S INCLUDED — service list left, callout right
          ============================================================ -->
-    <section class="sw-stats" aria-label="Ohio water hardness statistics">
+    <section class="sm-included" id="service-programs">
       <div class="container">
-        <h2 class="sr-only">Ohio Water Hardness Statistics</h2>
-        <div class="sw-stats-grid">
-          <div class="sw-stat-card reveal reveal-delay-1">
-            <div class="sw-stat-number">115&ndash;135 mg/L</div>
-            <div class="sw-stat-label">Cincinnati area water hardness</div>
-            <div class="sw-stat-detail">Second-highest national category</div>
-          </div>
-          <div class="sw-stat-card reveal reveal-delay-2">
-            <div class="sw-stat-number">Up to 29%</div>
-            <div class="sw-stat-label">More energy consumed by scaled systems</div>
-            <div class="sw-stat-detail">Per U.S. Department of Energy data</div>
-          </div>
-          <div class="sw-stat-card reveal reveal-delay-3">
-            <div class="sw-stat-number">1/16&Prime;</div>
-            <div class="sw-stat-label">Scale deposits per year on heat surfaces</div>
-            <div class="sw-stat-detail">At 15&ndash;25 gpg hardness levels</div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="sm-included-layout">
 
-    <!-- ============================================================
-         COMMERCIAL VS RESIDENTIAL
-         ============================================================ -->
-    <section class="sw-compare" id="why-commercial">
-      <div class="container">
-        <div class="sw-compare-layout">
-          <div class="sw-compare-text reveal">
-            <div class="section-tag">Commercial vs. Residential</div>
-            <h2>Industrial Facilities Need Engineered Systems &mdash; Not Off-the-Shelf Units</h2>
-            <p>Residential water softener companies install cookie-cutter systems sized for household flow rates. An industrial or commercial facility has entirely different demands: higher peak flow rates, continuous operation requirements, specific process water chemistry, and critical equipment that cannot afford a regeneration gap.</p>
-            <p>Hoffman Soft Water is founded by a chemical engineer. We spec systems from the water analysis up &mdash; not from a product catalog. Every proposal includes engineering rationale, not just a ballpark quote.</p>
+          <div class="sm-included-left reveal">
+            <div class="section-tag">Service Programs</div>
+            <h2>What a Hoffman Service Agreement Covers</h2>
+
+            <ul class="sm-service-list">
+              <li>
+                <div class="sm-service-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M2 7h20"/><path d="M2 17h20"/></svg>
+                </div>
+                <div>
+                  <h4>Salt Management &amp; Delivery</h4>
+                  <p>We monitor usage and schedule deliveries so your system never runs dry.</p>
+                </div>
+              </li>
+              <li>
+                <div class="sm-service-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div>
+                  <h4>Water Chemistry Testing</h4>
+                  <p>Regular on-site testing to verify system performance and catch problems before they escalate.</p>
+                </div>
+              </li>
+              <li>
+                <div class="sm-service-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                </div>
+                <div>
+                  <h4>Resin Inspection &amp; Replacement</h4>
+                  <p>Proactive resin health checks, cleaning, and replacement when needed.</p>
+                </div>
+              </li>
+              <li>
+                <div class="sm-service-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3"/></svg>
+                </div>
+                <div>
+                  <h4>Filter Media Replacement</h4>
+                  <p>Scheduled multimedia and carbon replacement based on usage and water quality data.</p>
+                </div>
+              </li>
+              <li>
+                <div class="sm-service-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+                </div>
+                <div>
+                  <h4>Performance Reporting</h4>
+                  <p>Written service reports after every visit so you have a record of system condition and chemistry.</p>
+                </div>
+              </li>
+              <li>
+                <div class="sm-service-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <h4>Emergency Response</h4>
+                  <p>When something fails unexpectedly, we respond. Doug personally handles emergency calls.</p>
+                </div>
+              </li>
+            </ul>
           </div>
 
           <div class="reveal reveal-delay-1">
-            <table class="sw-compare-table">
-              <thead>
-                <tr>
-                  <th scope="col" class="sw-compare-th residential">Residential Company</th>
-                  <th scope="col" class="sw-compare-th hoffman">Hoffman Soft Water</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="sw-compare-row">
-                  <td class="sw-compare-cell">Cookie-cutter system</td>
-                  <td class="sw-compare-cell hoffman-cell">Custom-engineered per facility</td>
-                </tr>
-                <tr class="sw-compare-row">
-                  <td class="sw-compare-cell">Sized for household flow</td>
-                  <td class="sw-compare-cell hoffman-cell">Sized for peak industrial demand</td>
-                </tr>
-                <tr class="sw-compare-row">
-                  <td class="sw-compare-cell">No chemistry expertise</td>
-                  <td class="sw-compare-cell hoffman-cell">B.S. Chemical Engineering</td>
-                </tr>
-                <tr class="sw-compare-row">
-                  <td class="sw-compare-cell">Equipment only</td>
-                  <td class="sw-compare-cell hoffman-cell">Equipment + chemical programs</td>
-                </tr>
-                <tr class="sw-compare-row">
-                  <td class="sw-compare-cell">9&ndash;5 availability</td>
-                  <td class="sw-compare-cell hoffman-cell">Emergency service available</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="sm-midnight-callout">
+              <div class="sm-midnight-callout-label">From the Field</div>
+              <h3>The Midnight Call Story</h3>
+              <p>One late-night call to a facility where no other company would respond turned into a $100,000 account. Not because we had the lowest price &mdash; because we showed up.</p>
+              <a href="index.html#contact" class="btn btn-primary">Request a Site Assessment</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EMERGENCY — navy bg, centered
+         ============================================================ -->
+    <section class="sm-emergency" id="emergency">
+      <div class="container">
+        <div class="sm-emergency-inner">
+          <div class="section-tag reveal">Emergency Response</div>
+          <h2 class="reveal reveal-delay-1">System Down? We Answer.</h2>
+          <p class="reveal reveal-delay-2">Industrial water treatment systems don&rsquo;t fail on business hours. When your softener stops regenerating, your filtration system alarms, or your chemical program needs immediate attention &mdash; call us. We roll. Urbana, Ohio to wherever you need us.</p>
+
+          <div class="reveal reveal-delay-3">
+            <a href="tel:+19375088739" class="sm-phone-cta">
+              <svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call 24/7: (937) 508-8739
+            </a>
+            <p class="sm-emergency-secondary">Or submit a service request below</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         SYSTEM TYPES
+         SERVICE TIERS — 3 cards
          ============================================================ -->
-    <section class="sw-systems" id="system-types">
+    <section class="sm-tiers" id="service-tiers">
       <div class="container">
-        <div class="sw-systems-header reveal">
-          <div class="section-tag">System Options</div>
-          <h2>Ion Exchange Systems Engineered for Your Application</h2>
-          <p class="section-desc">Three configurations built for different operational demands. We specify the right system based on your flow rate, hardness level, and tolerance for any service interruption.</p>
+        <div class="sm-tiers-header reveal">
+          <div class="section-tag">Options</div>
+          <h2>Service Programs for Every Facility</h2>
+          <p class="section-desc">From annual checkups to full monthly management &mdash; matched to your facility&rsquo;s criticality and water treatment demands.</p>
         </div>
 
-        <div class="sw-systems-grid">
-          <div class="sw-system-card reveal reveal-delay-1">
-            <div class="sw-system-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/><path d="M10 8h4"/><path d="M10 16h4"/></svg>
-            </div>
-            <h3>Twin Alternating</h3>
-            <p>Two-tank systems where one tank softens while the other regenerates &mdash; delivering uninterrupted soft water 24/7. Required for facilities that cannot tolerate any hardness breakthrough during regeneration cycles.</p>
-            <div class="sw-system-best">Best for</div>
-            <div class="sw-system-best-for">Boiler feed, continuous manufacturing, 24/7 facilities</div>
+        <div class="sm-tiers-grid">
+
+          <div class="sm-tier-card reveal reveal-delay-1">
+            <h3>Annual Service</h3>
+            <p>One scheduled visit per year &mdash; full system inspection, water testing, resin check, and written report. Good for newer systems in low-demand applications.</p>
+            <ul class="sm-tier-includes" aria-label="Annual Service includes">
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Annual inspection
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Water test
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Written report
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority scheduling
+              </li>
+            </ul>
           </div>
 
-          <div class="sw-system-card reveal reveal-delay-2">
-            <div class="sw-system-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="5"/></svg>
-            </div>
-            <h3>Demand-Initiated</h3>
-            <p>Systems that regenerate based on actual water usage rather than a fixed schedule. Maximizes salt and water efficiency &mdash; regenerates only when needed, not on a timer.</p>
-            <div class="sw-system-best">Best for</div>
-            <div class="sw-system-best-for">Variable-demand facilities, cost optimization</div>
+          <div class="sm-tier-card reveal reveal-delay-2">
+            <h3>Quarterly Service</h3>
+            <p>Four visits per year with ongoing chemistry monitoring and proactive maintenance. The right choice for most industrial and commercial facilities.</p>
+            <ul class="sm-tier-includes" aria-label="Quarterly Service includes">
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Quarterly site visits
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Water chemistry tracking
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Salt management
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Priority emergency response
+              </li>
+            </ul>
           </div>
 
-          <div class="sw-system-card reveal reveal-delay-3">
-            <div class="sw-system-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
-            </div>
-            <h3>Custom Multi-Stage</h3>
-            <p>Complex applications combining softening with multi-stage filtration and specialty treatment &mdash; designed from the water analysis up for facilities with demanding or non-standard requirements.</p>
-            <div class="sw-system-best">Best for</div>
-            <div class="sw-system-best-for">Pharmaceutical, food processing, laboratory applications</div>
+          <div class="sm-tier-card reveal reveal-delay-3">
+            <h3>Monthly Management</h3>
+            <p>Full ongoing water management &mdash; monthly visits, continuous reporting, coordinated chemical programs, and same-day emergency response. For critical facilities where water quality directly impacts operations.</p>
+            <ul class="sm-tier-includes" aria-label="Monthly Management includes">
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Monthly visits
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Same-day emergency response
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Full chemistry management
+              </li>
+              <li>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Detailed reporting
+              </li>
+            </ul>
           </div>
+
         </div>
 
-        <div class="sw-systems-feature-img reveal">
-          <img src="assets/1775779889783.jpg" alt="Twin alternating commercial water softener installation at industrial facility" loading="lazy" width="1200" height="600">
-        </div>
+        <p class="sm-tiers-note reveal">Every program is custom-scoped to your facility. <a href="#contact">Contact us for a quote.</a></p>
       </div>
     </section>
 
     <!-- ============================================================
-         APPLICATIONS
+         SINGLE VENDOR ADVANTAGE — 2 col
          ============================================================ -->
-    <section class="sw-applications" id="applications">
+    <section class="sm-vendor" id="one-relationship">
       <div class="container">
-        <div class="sw-applications-header reveal">
-          <div class="section-tag">Applications</div>
-          <h2>Where We Install Softening Systems</h2>
-          <p class="section-desc">Any Ohio facility where hard water is hitting your equipment, your product, or your energy bill.</p>
-        </div>
+        <div class="sm-vendor-layout">
 
-        <div class="sw-app-grid">
-          <div class="sw-app-card reveal reveal-delay-1">
-            <div class="sw-app-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M2 12h20"/><path d="M12 2c-4 4-4 16 0 20"/><path d="M12 2c4 4 4 16 0 20"/></svg>
-            </div>
-            <h3>Boiler Feed Water</h3>
-            <p>Protect boilers from scale, reduce fuel consumption, and extend tube life.</p>
-          </div>
-
-          <div class="sw-app-card reveal reveal-delay-2">
-            <div class="sw-app-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M7 2s2 4 2 10-2 10-2 10"/><path d="M17 2s-2 4-2 10 2 10 2 10"/></svg>
-            </div>
-            <h3>Cooling Tower Makeup</h3>
-            <p>Control scale and improve cycles of concentration in open cooling systems.</p>
-          </div>
-
-          <div class="sw-app-card reveal reveal-delay-3">
-            <div class="sw-app-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3"/></svg>
-            </div>
-            <h3>Food &amp; Beverage Processing</h3>
-            <p>Meet water purity requirements and protect steam and process equipment.</p>
-          </div>
-
-          <div class="sw-app-card reveal reveal-delay-1">
-            <div class="sw-app-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-            </div>
-            <h3>Laundry &amp; Hospitality</h3>
-            <p>Eliminate scale on commercial laundry equipment, dishwashers, and kitchen systems.</p>
-          </div>
-
-          <div class="sw-app-card reveal reveal-delay-2">
-            <div class="sw-app-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-            </div>
-            <h3>Manufacturing Process Water</h3>
-            <p>Protect downstream equipment and improve product consistency on the line.</p>
-          </div>
-
-          <div class="sw-app-card reveal reveal-delay-3">
-            <div class="sw-app-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
-            </div>
-            <h3>Pharmaceutical &amp; Laboratory</h3>
-            <p>Scale and corrosion protection for steam sterilizers, boilers, and water-using equipment in pharmaceutical and laboratory facilities.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         THE HOFFMAN DIFFERENCE — PILLARS
-         ============================================================ -->
-    <section class="sw-why" id="why-hoffman">
-      <div class="container">
-        <div class="sw-why-header reveal">
-          <div class="section-tag">Why Hoffman</div>
-          <h2>Same Mission. Different Animal.</h2>
-          <p class="section-desc" style="margin: 0 auto;">Born from Hoffman Water's 25+ years treating boilers, towers, and wastewater for Ohio's toughest industrial clients.</p>
-        </div>
-
-        <div class="pillars">
-          <div class="pillar reveal reveal-delay-1">
-            <div class="pillar-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3>Chemical Engineer-Led</h3>
-            <p>Founded by a chemical engineer who's been solving water chemistry problems since 1998. Not a sales team &mdash; an engineering team.</p>
-          </div>
-
-          <div class="pillar reveal reveal-delay-2">
-            <div class="pillar-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </div>
-            <h3>Industrial DNA</h3>
-            <p>Hoffman Water has treated boilers, cooling towers, closed loops, and wastewater for Ohio's industrial facilities for 25 years. Pretreatment is the natural extension.</p>
-          </div>
-
-          <div class="pillar reveal reveal-delay-3">
-            <div class="pillar-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            </div>
-            <h3>Custom Proposals</h3>
-            <p>We spec what your facility needs based on a water analysis and site assessment. Detailed engineering proposals with rationale &mdash; not ballpark quotes.</p>
-          </div>
-
-          <div class="pillar reveal reveal-delay-4">
-            <div class="pillar-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <h3>Ongoing Programs</h3>
-            <p>Every softener installation includes the option for an integrated chemical program: corrosion inhibitors, biocides, and monitoring so your equipment stays protected long-term.</p>
-          </div>
-
-          <div class="pillar reveal reveal-delay-5">
-            <div class="pillar-icon">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <h3>Emergency Response</h3>
-            <p>When your system fails, we answer. Doug personally responds to emergencies. The relationship doesn't end at commissioning.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         PROCESS — 4 STEPS
-         ============================================================ -->
-    <section class="sw-process" id="process">
-      <div class="container">
-        <div class="sw-process-header reveal">
-          <div class="section-tag">How We Work</div>
-          <h2>From Water Test to Running System</h2>
-          <p class="section-desc">A systematic approach every time &mdash; no guessing, no generic quotes.</p>
-        </div>
-
-        <div class="process-timeline">
-          <div class="process-step reveal reveal-delay-1">
-            <div class="step-circle"><span>1</span></div>
-            <h3>Site Assessment</h3>
-            <p>On-site water hardness test, flow measurement, and equipment survey. We identify your exact hardness level, peak demand, and downstream equipment requirements.</p>
-          </div>
-          <div class="process-step reveal reveal-delay-2">
-            <div class="step-circle"><span>2</span></div>
-            <h3>System Engineering</h3>
-            <p>Custom softener specification based on your analysis. Sized to hardness, flow rate, regeneration schedule, and application demands.</p>
-          </div>
-          <div class="process-step reveal reveal-delay-3">
-            <div class="step-circle"><span>3</span></div>
-            <h3>Installation</h3>
-            <p>Professional installation with commissioning, calibration, and operator training. Most commercial softener installs complete in one day.</p>
-          </div>
-          <div class="process-step reveal reveal-delay-4">
-            <div class="step-circle"><span>4</span></div>
-            <h3>Ongoing Service</h3>
-            <p>Salt management, resin inspection, performance monitoring, and responsive support. Paired with chemical programs for complete system protection.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         PRICING
-         ============================================================ -->
-    <section class="sw-pricing" id="pricing">
-      <div class="container">
-        <div class="sw-pricing-layout">
-          <div class="sw-pricing-text reveal">
-            <div class="section-tag">Investment</div>
-            <h2>Transparent Pricing &mdash; No Ballpark Guesses</h2>
-            <p>Commercial water softener installations typically range from $5,000 to $20,000+ depending on flow rate, hardness level, system configuration, and application.</p>
-            <p>Multi-stage softening and filtration systems start around $15,000 for larger or more complex applications and can exceed $50,000.</p>
-            <p>Every proposal includes a detailed, line-item breakdown with engineering rationale. No hidden fees. No upsells you didn't ask for.</p>
-            <p>One installation typically pays for itself in reduced maintenance and energy costs within 12&ndash;24 months at Ohio's hardness levels.</p>
+          <div class="sm-vendor-text reveal">
+            <div class="section-tag">One Relationship</div>
+            <h2>Pretreatment, Chemistry, and Service &mdash; Under One Roof</h2>
+            <p>Hoffman Soft Water is the pretreatment division of Hoffman Water &mdash; a company that has been running boiler, cooling tower, and closed loop chemical programs for Ohio&rsquo;s industrial facilities since 1998.</p>
+            <p>When we manage your pretreatment systems and your parent company manages your water treatment programs, you have one vendor, one point of contact, and a team that already knows your facility&rsquo;s water chemistry.</p>
+            <p>That&rsquo;s how you stop chasing down three different companies when something goes wrong.</p>
           </div>
 
           <div class="reveal reveal-delay-1">
-            <div class="sw-pricing-callout">
-              <h3>Request a Free Site Assessment</h3>
-              <p>We'll test your water on-site and deliver a detailed system recommendation &mdash; at no cost and no obligation. Whether you engage us or not, you'll walk away with real data about your facility.</p>
-              <a href="index.html#contact" class="btn btn-primary btn-lg">Request a Site Assessment</a>
-            </div>
+            <ul class="sm-vendor-points">
+              <li>
+                <div class="sm-vendor-point-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <h4>One vendor to call</h4>
+                  <p>vs. coordinating multiple service companies</p>
+                </div>
+              </li>
+              <li>
+                <div class="sm-vendor-point-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div>
+                  <h4>We already know your water</h4>
+                  <p>No learning curve when something goes wrong</p>
+                </div>
+              </li>
+              <li>
+                <div class="sm-vendor-point-icon">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <h4>Integrated programs</h4>
+                  <p>Pretreatment and water treatment designed to work together</p>
+                </div>
+              </li>
+            </ul>
           </div>
+
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         CONTACT CTA
+         CONTACT / SERVICE REQUEST
          ============================================================ -->
-    <section class="sw-contact" id="contact">
+    <section class="sm-contact" id="contact">
       <div class="container">
-        <div class="sw-contact-grid">
-          <div class="sw-contact-info reveal">
+        <div class="sm-contact-grid">
+          <div class="sm-contact-info reveal">
             <div class="section-tag">Get Started</div>
             <h2>Request a Site Assessment</h2>
-            <p class="section-desc">Tell us about your facility and we'll come to you. On-site water test, flow measurement, system evaluation, and a detailed recommendation. No obligation.</p>
+            <p class="section-desc">Tell us about your facility and current water treatment setup. We&rsquo;ll evaluate your systems and recommend the right service program.</p>
 
-            <ul class="sw-contact-details">
+            <ul class="sm-contact-details">
               <li>
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 <a href="tel:+19375088739" style="color:inherit;"><strong>(937) 508-8739</strong></a>
@@ -1846,35 +1632,35 @@
 
             <div class="trust-note">
               <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>No obligation site assessment &mdash; we test your water, evaluate your systems, and give you a real recommendation. Whether you engage us or not.</span>
+              <span>We respond within one business day. Emergency? Call directly &mdash; Doug picks up.</span>
             </div>
           </div>
 
-          <form id="softeningForm" class="contact-form reveal reveal-delay-1" novalidate>
+          <form id="serviceMonitoringForm" class="contact-form reveal reveal-delay-1" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label for="sw-name">Full Name *</label>
-                <input type="text" id="sw-name" name="name" required aria-required="true" placeholder="Your name">
+                <label for="sm-name">Full Name *</label>
+                <input type="text" id="sm-name" name="name" required aria-required="true" placeholder="Your name">
               </div>
               <div class="form-group">
-                <label for="sw-company">Company / Facility</label>
-                <input type="text" id="sw-company" name="company" placeholder="Organization name">
+                <label for="sm-company">Company / Facility</label>
+                <input type="text" id="sm-company" name="company" placeholder="Organization name">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="sw-email">Email *</label>
-                <input type="email" id="sw-email" name="email" required aria-required="true" placeholder="you@company.com">
+                <label for="sm-email">Email *</label>
+                <input type="email" id="sm-email" name="email" required aria-required="true" placeholder="you@company.com">
               </div>
               <div class="form-group">
-                <label for="sw-phone">Phone *</label>
-                <input type="tel" id="sw-phone" name="phone" required aria-required="true" placeholder="(937) 555-0000">
+                <label for="sm-phone">Phone *</label>
+                <input type="tel" id="sm-phone" name="phone" required aria-required="true" placeholder="(937) 555-0000">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="sw-facility-type">Facility Type</label>
-                <select id="sw-facility-type" name="facility-type">
+                <label for="sm-facility-type">Facility Type</label>
+                <select id="sm-facility-type" name="facility-type">
                   <option value="">Select type</option>
                   <option value="manufacturing">Manufacturing Plant</option>
                   <option value="food-bev">Food &amp; Beverage</option>
@@ -1887,16 +1673,16 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="sw-zip">Zip Code</label>
-                <input type="text" id="sw-zip" name="zip" placeholder="45202" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?">
+                <label for="sm-zip">Zip Code</label>
+                <input type="text" id="sm-zip" name="zip" placeholder="45202" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?">
               </div>
             </div>
             <div class="form-group">
-              <label for="sw-message">Tell Us About Your Facility &amp; Needs</label>
-              <textarea id="sw-message" name="message" placeholder="Current water treatment setup, pain points, system types, flow rates — anything relevant."></textarea>
+              <label for="sm-message">Current Water Treatment Setup &amp; Needs</label>
+              <textarea id="sm-message" name="message" placeholder="Current systems, service history, pain points, urgency — anything relevant."></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-lg form-submit">Request a Site Assessment</button>
-            <p class="form-note">We'll respond within one business day with next steps.</p>
+            <p class="form-note">We&rsquo;ll respond within one business day with next steps.</p>
           </form>
         </div>
       </div>
@@ -1924,9 +1710,10 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="water-softening.html" class="active">Commercial Softening</a></li>
-            <li><a href="index.html#services">Filtration Systems</a></li>
-            <li><a href="index.html#contact">Service &amp; Monitoring</a></li>
+            <li><a href="water-softening.html">Commercial Softening</a></li>
+            <li><a href="filtration.html">Filtration &amp; Treatment</a></li>
+            <li><a href="service-monitoring.html" class="active">Service &amp; Monitoring</a></li>
+            <li><a href="index.html#services">All Services</a></li>
           </ul>
         </div>
 
@@ -1966,7 +1753,7 @@
       <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Call 24/7: (937) 508-8739
     </a>
-    <a href="#contact" class="mobile-cta-assess">Request a Site Assessment</a>
+    <a href="#contact" class="mobile-cta-assess">Schedule a Service Call</a>
   </div>
 
   <!-- ============================================================
@@ -2017,23 +1804,23 @@
     revealElements.forEach(el => revealObserver.observe(el));
 
     // Contact form — mailto handoff with success panel
-    const softeningForm = document.getElementById('softeningForm');
-    if (softeningForm) {
-      softeningForm.addEventListener('submit', (e) => {
+    const serviceMonitoringForm = document.getElementById('serviceMonitoringForm');
+    if (serviceMonitoringForm) {
+      serviceMonitoringForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const f = softeningForm;
+        const f = serviceMonitoringForm;
         const v = (id) => (f.querySelector('#' + id)?.value || '').trim();
-        const name = v('sw-name');
-        const company = v('sw-company');
-        const email = v('sw-email');
-        const phone = v('sw-phone');
-        const facility = v('sw-facility-type');
-        const zip = v('sw-zip');
-        const message = v('sw-message');
+        const name = v('sm-name');
+        const company = v('sm-company');
+        const email = v('sm-email');
+        const phone = v('sm-phone');
+        const facility = v('sm-facility-type');
+        const zip = v('sm-zip');
+        const message = v('sm-message');
 
         // Validate required fields and set aria-invalid
         let valid = true;
-        ['sw-name', 'sw-email', 'sw-phone'].forEach(id => {
+        ['sm-name', 'sm-email', 'sm-phone'].forEach(id => {
           const el = document.getElementById(id);
           if (el && !el.value.trim()) {
             el.setAttribute('aria-invalid', 'true');
@@ -2048,7 +1835,7 @@
           return;
         }
 
-        const subject = 'Water Softener Site Assessment — ' + name + (company ? ' / ' + company : '');
+        const subject = 'Service Program Inquiry — ' + name + (company ? ' / ' + company : '');
         const bodyLines = [
           'Name: ' + name,
           'Company / Facility: ' + (company || '(not provided)'),
@@ -2060,7 +1847,7 @@
           'Details:',
           message || '(none provided)',
           '',
-          '— Sent from hoffmansoftwater.com/water-softening.html'
+          '— Sent from hoffmansoftwater.com/service-monitoring.html'
         ];
         const mailto = 'mailto:doug.hoffman@hoffmanwater.com'
           + '?subject=' + encodeURIComponent(subject)
@@ -2068,7 +1855,7 @@
         window.open(mailto, '_blank');
 
         // Show success panel
-        softeningForm.innerHTML = '<div style="text-align:center;padding:2rem;"><svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><h3 style="color:var(--navy);margin-top:1rem;">Assessment Request Sent</h3><p style="color:var(--text-secondary);margin-top:0.5rem;">Your mail client should open with a pre-filled message. If it did not open, email us at <a href="mailto:doug.hoffman@hoffmanwater.com">doug.hoffman@hoffmanwater.com</a> or call (937) 508-8739.</p></div>';
+        serviceMonitoringForm.innerHTML = '<div style="text-align:center;padding:2rem;"><svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><h3 style="color:var(--navy);margin-top:1rem;">Service Request Sent</h3><p style="color:var(--text-secondary);margin-top:0.5rem;">Your mail client should open with a pre-filled message. If it did not open, email us at <a href="mailto:doug.hoffman@hoffmanwater.com">doug.hoffman@hoffmanwater.com</a> or call (937) 508-8739.</p></div>';
       });
     }
   </script>
